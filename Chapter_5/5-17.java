@@ -9,3 +9,9 @@ Summary: (Display pyramid) Write a program that prompts
           displays a pyramid, as shown in the following 
           sample run.
 */
+
+/*
+Main{
+
+}
+*/
