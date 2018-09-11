@@ -17,3 +17,29 @@ Summary: (Algebra: solve 2 * 2 linear equations) You can use Cramer’s rule
 
           (Hint: Use the equations given first to identify what numeric value replaces which number. In this case, a is 3.4.)
 */
+
+/*
+Main{
+          float a;
+          float b;
+          float c;
+          float d;
+          float e;
+          float f;
+          float x;
+          float y;
+          float z;
+          
+          ax + by = e
+            3.4x + 50.2y = 44.5      
+            2.1x + 0.55y = 5.9
+          
+          x = (ed - bf) / (ad - bc)
+          cx = dy - f
+          y = (af - ec) / (ad - bc)
+
+          println "X = " x;
+          println "Y = " y;
+          
+}
+*/
