@@ -15,8 +15,8 @@ Summary: (Convert Celsius to Fahrenheit) Write a program that reads a Celsius de
 
 /*
 Main{
-          double fahrenheit;
-          double celsius = user input;
+          float fahrenheit;
+          float celsius = user input;
           
           fahrenheit = [(9.0/5.0) * celsius] + 32.0;
           
