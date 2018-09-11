@@ -26,3 +26,9 @@ Summary: (Game: locker puzzle) A school has 100 lockers and 100 students.
           and close the lockers. Finally, you can use a for loop to display which
           lockers are still open.
 */
+
+/*
+Main{
+
+}
+*/
