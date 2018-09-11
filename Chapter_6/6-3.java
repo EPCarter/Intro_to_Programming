@@ -17,3 +17,9 @@ Summary: (Palindrome integer) Write the methods with the following headers:
 
           (Hint: The isPalindrome method should call the reverse method.)
 */
+
+/*
+Main{
+
+}
+*/
