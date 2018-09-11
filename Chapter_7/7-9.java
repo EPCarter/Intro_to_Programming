@@ -14,3 +14,9 @@ Summary: (Find the smallest element) Write a method that finds
           ten numbers, invokes this method to return the minimum 
           value, and displays the minimum value.
 */
+
+/*
+Main{
+
+}
+*/
