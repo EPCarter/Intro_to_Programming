@@ -11,15 +11,15 @@ Summary: (Area and perimeter of a rectangle) Write a program that displays
 
 /*
 Main{
-          int Area;
-          int Perimeter;
-          int Width = 4.5;
-          int Height = 7.9;
+     int Area;
+     int Perimeter;
+     int Width = 4.5;
+     int Height = 7.9;
           
-          Area = Width * Height
-          Perimeter = (Width + Height) * 2
+      Area = Width * Height
+      Perimeter = (Width + Height) * 2
           
-          println "Area:" Area;
-          println "Perimeter:" Perimeter;
+      println "Area:" Area;
+      println "Perimeter:" Perimeter;
 }
 */
