@@ -16,3 +16,10 @@ Summary: Geometry: point in a rectangle?) Write a program that
           distance to (0, 0) is less than or equal to 5.0 / 2. Test 
           your program to cover all cases.)
 */
+
+
+/*
+Main{
+
+}
+*/
