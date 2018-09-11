@@ -26,3 +26,9 @@ Summary: (Game: nine heads and tails) Nine coins are placed in a 3-by-3
             The user entered 7 , which corresponds to 000000111 . Since 0 stands 
             for H and 1 for T , the output is correct.
 */
+
+/*
+Main{
+
+}
+*/
