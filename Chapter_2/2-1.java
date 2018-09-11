@@ -15,6 +15,12 @@ Summary: (Convert Celsius to Fahrenheit) Write a program that reads a Celsius de
 
 /*
 Main{
-
+          double fahrenheit;
+          double celsius = user input;
+          
+          fahrenheit = [(9/5) * celsius] + 32;
+          
+          println "Celcius: " celsius " is " "Fahrenheit: " fahrenheit;
+          
 }
 */
