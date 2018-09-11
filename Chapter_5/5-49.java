@@ -15,7 +15,6 @@ Summary: (Count vowels and consonants) Assume letters
           if statement
 */
 
-
 /*
 Main{
 
