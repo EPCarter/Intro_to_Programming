@@ -17,3 +17,10 @@ Summary: (Algebra: solve 2 * 2 linear equations) A linear equation can
           
           (Hint: Only solve the equations below if ad - bc is not 0.)
 */
+
+
+/*
+Main{
+
+}
+*/
