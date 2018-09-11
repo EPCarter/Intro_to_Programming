@@ -12,3 +12,9 @@ Summary: (Perfect number) A positive integer is called
           There are four perfect numbers less than 10,000. 
           Write a program to find all these four numbers.
 */
+
+/*
+Main{
+
+}
+*/
