@@ -21,3 +21,9 @@ Summary: (Geometry: area of a pentagon) Write a program that
             where r is the length from the center of a pentagon 
             to a vertex. Round up two digits after the decimal point.
 */
+
+/*
+Main{
+
+}
+*/
