@@ -16,3 +16,9 @@ Summary: (Guess the capitals) Write a program that repeatedly
           This assignment has been edited from the book version to 
           use an array that stores only 10 states and capitals.
 */
+
+/*
+Main{
+
+}
+*/
