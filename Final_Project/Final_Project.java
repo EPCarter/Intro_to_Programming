@@ -2,7 +2,7 @@
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
-Assignment: 1-13
+Assignment: Final_Project
 Date: .  2018
 Summary: Think of a project that uses multiple items you have learned 
          from this class (using arrays is required). Please create a 
@@ -18,4 +18,4 @@ Summary: Think of a project that uses multiple items you have learned
                   be considering beforehand to avoid those bugs. (Numbered list and 2 paragraphs)
               5. Conclusion: Why you are moving forward with this project. 
                   Overview of project strategy. (1 - 2 paragraphs)
- */
+*/
