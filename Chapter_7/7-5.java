@@ -14,3 +14,9 @@ Summary: (Print distinct numbers) Write a program that reads in ten
 
           After the input, the array contains the distinct numbers.
 */
+
+/*
+Main{
+
+}
+*/
