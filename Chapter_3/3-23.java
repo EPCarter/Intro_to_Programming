@@ -1,9 +1,13 @@
- /*
+/* 
+
+ "//?" Precede my questions
+
  Author: Erik Carter
  Email: Carter.Eri7200@stu.stech.edu
  Course: CSCI 1105 - Introduction to Programming
- Assignment: 3-23
- Date: .  2018
+ Assignment: 3-23 //? Can
+ Date: Sept. 12, 2018
+ 
  Summary: (Geometry: point in a rectangle?) Write a program that 
            prompts the user to enter a point (x, y) and checks 
            whether the point is within the rectangle centered at 
@@ -19,8 +23,8 @@
 
 import java.util.Scanner; //? Can I import this anywhere so long as it's before it's actually called? (eg. line 23.5)
 
-public class Main {		
-  public static void main(String[] args) 		
+public class Main {	//? What are the principles in correct naming of classes?	
+  public static void main(String[] args) //? What about here?		
 		Scanner reader = new Scanner(System.in);
 		
 		System.out.print("Rectangle Width: ");
@@ -51,7 +55,6 @@ public class Main {
  
 /*  
 TODO Remove blank decimals (eg. 2.0 >> 2)
-
  	if(x % 1 <= 0){
    		x = x;     
 		}
