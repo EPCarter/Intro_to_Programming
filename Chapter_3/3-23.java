@@ -19,16 +19,19 @@ Summary: (Geometry: point in a rectangle?) Write a program that
 
 
 /*
-Main{
-   double x = (user input "Enter X Coordinate:");
-   double y = (user input "Enter Y Coordinate:");
-        
-        if(-5 < x < 5 && -2.5 < y < 2.5){
-          system.out.println("Point is within the box".);
-          }
-        
-        else{
-          system.out.println("Point is outside the box.")
-          }
+class 3-23 {
+	public static void main(String[] args) {
+		float x = 2;
+		float y = 16;
+		
+	if(-5 < x && x < 5 && -2.5 < y && y < 2.5){
+		System.out.println("Coordinates (" + x + "," + y + ") are Inside box");
+	}
+	else{
+		System.out.println("Coordinates (" + x + "," + y + ") are Outside box");
+	}
+		
+		
+	}
 }
 */
