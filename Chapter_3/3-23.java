@@ -17,17 +17,15 @@ Summary: (Geometry: point in a rectangle?) Write a program that
           your program to cover all cases.)
 */
 
+import java.util.Scanner;
 
-/*
-class 3-23 {
+class 3-23{
 	public static void main(String[] args) {
-		import java.util.Scanner;
 		
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Enter X Coordinate: ");
 		float x = reader.nextFloat();
 		
-		Scanner reader = new Scanner(System.in);
 		System.out.println("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
 		
@@ -39,4 +37,3 @@ class 3-23 {
 	}	
 	}
 }
-*/
