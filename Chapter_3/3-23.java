@@ -24,31 +24,31 @@
 import java.util.Scanner; //? Can I import this anywhere so long as it's before it's actually called? (eg. line 23.5)
 
 public class Main {	//? What are the principles in correct naming of classes?	
-  public static void main(String[] args) //? What about here?		
+  public static void main(String[] args); //? What about here?		
 		Scanner reader = new Scanner(System.in);
 		
-		System.out.print("Rectangle Width: ");
+		System.out.print("Rectangle Width: ";
 		float w = reader.nextFloat()/2;
 		if(w % 1 <= 0){	
-			int w = w  //? Will this overwrite float w as an int w?
+			int w = w;  //? Will this overwrite float w as an int w?
 		} //? Are my } correct throughout?
 		
-		System.out.print("Rectangle Height: ");
+		System.out.print("Rectangle Height: ";
 		float h = reader.nextFloat()/2;
 		if(h % 1 <= 0){	
-			int h = h
+			int h = h;
 		}	
 	
 		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
 		if(x % 1 <= 0){	
-			int x = x
+			int x = x;
 		}
 		
 		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
 		if(y % 1 <= 0){	
-			int y = y
+			int y = y;
 		}
 	
 		reader.close();		
