@@ -24,8 +24,11 @@ Summary: (Geometry: area of a pentagon) Write a program that
 
 /*
 Main{
-          float r = (user input system.out.println("Input Radius of Pentagon to corner:"))
-          
-          
+         float radius = (user input system.out.println("Input Radius of Pentagon to corner:"))
+         
+         float side = 2 * radius math.sin * 5;
+         float area = (5 * side^2) / [4 * tan(pi/5); 
+        //TODO Round up tenths
+         System.out.println("For a radius of " + r + "The area is: " + area);   
 }
 */
