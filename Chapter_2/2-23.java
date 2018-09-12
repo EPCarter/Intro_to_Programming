@@ -11,6 +11,14 @@ Summary: (Cost of driving) Write a program that prompts the user to enter
 
 /*
 Main{
-
+          double distance = user input "Distance (mi):"
+          double efficiency = user input "Efficiency (mi/gal):"
+          double price = user input "Price ($/gal): $"
+          double tripCost;
+          
+          tripCost = distance * efficiency * price;
+          
+          system.out.println("Trip Cost: $" tripcost);
+          
 }
 */
