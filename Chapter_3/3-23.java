@@ -20,15 +20,16 @@ Summary: (Geometry: point in a rectangle?) Write a program that
 import java.util.Scanner;
 
 class 3-23{
-	public static void main(String[] args) {
+public static void main(String[] args) {
+		
 		
 		Scanner reader = new Scanner(System.in);
-		System.out.println("Enter X Coordinate: ");
+		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
 		
-		System.out.println("Enter Y Coordinate: ");
+		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
-		
+			
 	if(-5 < x && x < 5 && -2.5 < y && y < 2.5){
 		System.out.println("Coordinates (" + x + ", " + y + ") are Inside box");
 	}
