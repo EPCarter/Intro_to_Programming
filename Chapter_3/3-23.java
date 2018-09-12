@@ -16,16 +16,13 @@
            distance to (0, 0) is less than or equal to 5.0 / 2. Test 
            your program to cover all cases.)
  */
+
 import java.util.Scanner;
 
-public class Main {
-
-		
-  public static void main(String[] args) {
-  
-
-		
+public class Main {		
+  public static void main(String[] args) 		
 		Scanner reader = new Scanner(System.in);
+		
 		System.out.print("Rectangle Width: ");
 		float w = reader.nextFloat()/2;
 		
@@ -38,23 +35,23 @@ public class Main {
 		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
 		
-		reader.close();
-		
-   		
- /*  
- if(x % 1 <= 0){
-   x = x;     
-}
-   if(y % 1 <= 0){
-         y = y;
-}
+		reader.close();		
+ 
+/*  
+ 	if(x % 1 <= 0){
+   		x = x;     
+		}
+   	
+	if(y % 1 <= 0){
+         	y = y;
+		}
 */
 
 	if(-w <= x && x <= w && -h <= y && y <= h){
 		System.out.println("Coordinates (" + x + ", " + y + ") are Inside (+-"x ", +-" y")";
-	}
+		}
 
-else{		System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"x ", +-" y");
+	else{System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"x ", +-" y");
+		}
 	}
-}
 }
