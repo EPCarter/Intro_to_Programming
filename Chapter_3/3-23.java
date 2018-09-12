@@ -4,7 +4,7 @@ Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: 3-23
 Date: .  2018
-Summary: Geometry: point in a rectangle?) Write a program that 
+Summary: (Geometry: point in a rectangle?) Write a program that 
           prompts the user to enter a point (x, y) and checks 
           whether the point is within the rectangle centered at 
           (0, 0) with width 10 and height 5. For example, (2, 2) 
@@ -20,6 +20,15 @@ Summary: Geometry: point in a rectangle?) Write a program that
 
 /*
 Main{
-
+   double x = (user input "Enter X Coordinate:");
+   double y = (user input "Enter Y Coordinate:");
+        
+        if(-5 < x < 5 && -2.5 < y < 2.5){
+          system.out.println("Point is within the box".);
+          }
+        
+        else{
+          system.out.println("Point is outside the box.")
+          }
 }
 */
