@@ -27,6 +27,16 @@ Summary: (Financial application: compound value) Suppose you save $100 each mont
 
 /*
 Main{
-
+          float monthlyMoney = user input println "Monthly Savings: ";
+          float interestRate = 0.05/12;
+          float accountValue;
+          int month = 0;
+          
+          while(month < 7){
+                    accountValue = (monthlyMoney + accountValue) * interestRate;
+                    month++;
+                    }
+                    
+          system.out.println("Account Value after 6mo: $" accountValue);
 }
 */
