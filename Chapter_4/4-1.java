@@ -24,7 +24,8 @@ Summary: (Geometry: area of a pentagon) Write a program that
 
 /*
 Main{
-          double r = (user input system.out.println("Input Radius of Pentagon to corner:"))
+          float r = (user input system.out.println("Input Radius of Pentagon to corner:"))
+          
           
 }
 */
