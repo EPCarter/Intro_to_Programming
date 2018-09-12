@@ -13,10 +13,10 @@ Summary: (Compute the perimeter of a triangle) Write a program
 
 /*
 Main{
-          double sideA = user input "Side A:";
-          double sideB = user input "Side B:";
-          double sideC = user input "Side C:";
-          double perimeter;
+          float sideA = user input "Side A:";
+          float sideB = user input "Side B:";
+          float sideC = user input "Side C:";
+          float perimeter;
           
           if (Double.parseDouble(data[user input]) < 0) {
                     out.println("Must be positive.");
