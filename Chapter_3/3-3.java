@@ -21,6 +21,25 @@ Summary: (Algebra: solve 2 * 2 linear equations) A linear equation can
 
 /*
 Main{
-
+         double a = (user input "Input A:");
+         double b = (user input "Input B:");
+         double c = (user input "Input C:");
+         double d = (user input "Input D:");
+         double e = (user input "Input E:");
+         double f = (user input "Input F:");
+         double x;
+         double y;
+          
+          if( ad - bc = 0){
+                    system.out.println("The equation jhas no solution.");
+                    }
+          else{
+              ax + by = e
+              cx + dy = f
+              x = (ed - bf) / (ad - bc)
+              y = (af - ec) / (ad - bc)
+              
+          system.out.println("The Answer is: ");
+          }
 }
 */
