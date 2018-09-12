@@ -17,7 +17,7 @@
            your program to cover all cases.)
  */
 
-import java.util.Scanner;
+import java.util.Scanner; //? Can I import this anywhere so long as it's before it's actually called? (eg. line 23.5)
 
 public class Main {		
   public static void main(String[] args) 		
@@ -25,19 +25,33 @@ public class Main {
 		
 		System.out.print("Rectangle Width: ");
 		float w = reader.nextFloat()/2;
+		if(w % 1 <= 0){	
+			int w = w  //? Will this overwrite float w as an int w?
+		} //? Are my } correct throughout?
 		
 		System.out.print("Rectangle Height: ");
 		float h = reader.nextFloat()/2;
-		
+		if(h % 1 <= 0){	
+			int h = h
+		}	
+	
 		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
-
+		if(x % 1 <= 0){	
+			int x = x
+		}
+		
 		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
-		
+		if(y % 1 <= 0){	
+			int y = y
+		}
+	
 		reader.close();		
  
 /*  
+TODO Remove blank decimals (eg. 2.0 >> 2)
+
  	if(x % 1 <= 0){
    		x = x;     
 		}
@@ -51,7 +65,8 @@ public class Main {
 		System.out.println("Coordinates (" + x + ", " + y + ") are Inside (+-"x ", +-" y")";
 		}
 
-	else{System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"x ", +-" y");
+	else{
+		System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"x ", +-" y");
 		}
 	}
 }
