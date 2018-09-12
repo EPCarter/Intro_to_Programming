@@ -41,7 +41,7 @@ public class Main {	//? What are the principles in correct naming of classes?
 	
 		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
-		if(x % 1 <= 0){	
+		if(x % 1 <= 0){	up
 			int x = x;
 		}
 		
@@ -65,11 +65,11 @@ TODO Remove blank decimals (eg. 2.0 >> 2)
 */
 
 	if(-w <= x && x <= w && -h <= y && y <= h){
-		System.out.println("Coordinates (" + x + ", " + y + ") are Inside (+-"x ", +-" y")";
+		System.out.println("Coordinates (" + x + ", " + y + ") are Inside (+-" + x + ", +-" + y + ")");
 		}
 
 	else{
-		System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"x ", +-" y");
+		System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"+ x + ", +-" + y + ")");
 		}
 	}
 }
