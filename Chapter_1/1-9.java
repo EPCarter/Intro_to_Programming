@@ -11,10 +11,10 @@ Summary: (Area and perimeter of a rectangle) Write a program that displays
 
 /*
 Main{
-     int Area;
-     int Perimeter;
-     int Width = 4.5;
-     int Height = 7.9;
+     float Area;
+     float Perimeter;
+     float Width = 4.5;
+     float Height = 7.9;
           
       Area = Width * Height
       Perimeter = (Width + Height) * 2
