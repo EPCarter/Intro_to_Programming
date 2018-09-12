@@ -31,10 +31,18 @@ public static void main(String[] args) {
 		
 		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
-		
+
 		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
-			
+		
+   if(x % 1 = 0){
+         x = Integer.parseInt(x);
+
+   if(y % 1 = 0){
+         y = Integer.parseInt(y);
+}
+
+
 	if(-w < x && x < w && -h < y && y < h){
 		System.out.println("Coordinates (" + x + ", " + y + ") are Inside box");
 	}
