@@ -37,7 +37,7 @@ public static void main(String[] args) {
 		
    if(x % 1 = 0){
          x = Integer.parseInt(x);
-
+}
    if(y % 1 = 0){
          y = Integer.parseInt(y);
 }
