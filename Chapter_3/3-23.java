@@ -21,17 +21,22 @@ Summary: (Geometry: point in a rectangle?) Write a program that
 /*
 class 3-23 {
 	public static void main(String[] args) {
-		float x = 2;
-		float y = 16;
+		import java.util.Scanner;
+		
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter X Coordinate: ");
+		float x = reader.nextFloat();
+		
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter Y Coordinate: ");
+		float y = reader.nextFloat();
 		
 	if(-5 < x && x < 5 && -2.5 < y && y < 2.5){
-		System.out.println("Coordinates (" + x + "," + y + ") are Inside box");
+		System.out.println("Coordinates (" + x + ", " + y + ") are Inside box");
 	}
 	else{
-		System.out.println("Coordinates (" + x + "," + y + ") are Outside box");
-	}
-		
-		
+		System.out.println("Coordinates (" + x + ", " + y + ") are Outside box");
+	}	
 	}
 }
 */
