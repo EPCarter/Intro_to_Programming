@@ -13,6 +13,17 @@ Summary: (Compute the perimeter of a triangle) Write a program
 
 /*
 Main{
-
+          double sideA = user input "Side A:";
+          double sideB = user input "Side B:";
+          double sideC = user input "Side C:";
+          
+          if (Double.parseDouble(data[user input]) < 0) {
+                    out.println("Must be positive.");
+                    }
+      
+          elif (user input = NaN){
+                    out.println("Must be a number.");
+                    }
+                    
 }
 */
