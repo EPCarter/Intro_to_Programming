@@ -16,6 +16,7 @@ Main{
           double sideA = user input "Side A:";
           double sideB = user input "Side B:";
           double sideC = user input "Side C:";
+          double perimeter;
           
           if (Double.parseDouble(data[user input]) < 0) {
                     out.println("Must be positive.");
@@ -24,6 +25,15 @@ Main{
           elif (user input = NaN){
                     out.println("Must be a number.");
                     }
-                    
+          
+          elif (sideA + side B > sideC){
+                    out.println("Side C must be longer than Side A + Side B.");
+                    }
+          
+          
+          else{
+           perimeter = sideA + sideB + sideC
+           out.println(perimeter);
+           }
 }
 */
