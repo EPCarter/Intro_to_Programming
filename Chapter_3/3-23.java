@@ -22,15 +22,20 @@ import java.util.Scanner;
 class 3-23{
 public static void main(String[] args) {
 		
-		
 		Scanner reader = new Scanner(System.in);
+		System.out.print("Rectangle Width: ");
+		float w = reader.nextFloat()/2;
+		
+		System.out.print("Rectangle Height: ");
+		float h = reader.nextFloat()/2;
+		
 		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
 		
 		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
 			
-	if(-5 < x && x < 5 && -2.5 < y && y < 2.5){
+	if(-w < x && x < w && -h < y && y < h){
 		System.out.println("Coordinates (" + x + ", " + y + ") are Inside box");
 	}
 	else{
