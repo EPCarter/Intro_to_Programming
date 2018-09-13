@@ -13,8 +13,10 @@ Summary: (Perfect number) A positive integer is called
           Write a program to find all these four numbers.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class fiveThirtythree{
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
