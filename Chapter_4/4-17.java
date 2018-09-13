@@ -48,7 +48,7 @@ class Untitled {
                        31 [Jan, Mar, May, Jul, Aug, Oct, Dec]
                     }
                     
-              elseif(year >= -45 && year <= 1582){
+              else if(year >= -45 && year <= 1582){
                     //Julian Jan 45BCE - Oct 1582AD
                        28 [Feb]
                        29 [Feb]
@@ -56,7 +56,7 @@ class Untitled {
                        31 [Jan, Mar, May, Jul, Aug, Oct, Dec]
                     }
                     
-              elseif(year < -45){
+              else if(year < -45){
                      //Roman Republic
                        23 [Wag] //Month of wages (Mercedonius Mensis Intercalari)
                        28 [Feb]
