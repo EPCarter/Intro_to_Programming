@@ -36,8 +36,10 @@ Summary: Think of a project that uses multiple items you have learned
            and submit the link here.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class finalProject {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
