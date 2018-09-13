@@ -17,8 +17,10 @@ Summary: (Guess the capitals) Write a program that repeatedly
           use an array that stores only 10 states and capitals.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class eightThirtyseven {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
