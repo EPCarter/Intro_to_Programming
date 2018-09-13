@@ -20,8 +20,10 @@ Summary: (Eliminate duplicates) Write a method that returns a
           the user's array.)
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class sevenFifteen {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
