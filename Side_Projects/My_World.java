@@ -69,11 +69,18 @@ public class Delivery_Service{
       0: Directory change floor name or Lobby option
    	Rename floor, new room, move room to other place or swap places or inbetween places
 	
-	      
+	101 blank
+	      102 {
+	      	Delivery service
+		
+      }
+	      		
+	      		
 	      
    }
    
    two{
+	   
    }
    
    three{
