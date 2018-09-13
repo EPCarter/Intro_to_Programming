@@ -20,8 +20,10 @@ Summary: (Algebra: add two matrices) Write a method to add two matrices.
                   7.0   8.0   9.0   1.1  4.3  5.2   8.1  12.3  14.2
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class eightFive {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
