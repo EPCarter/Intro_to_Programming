@@ -15,8 +15,10 @@ Summary: (Print distinct numbers) Write a program that reads in ten
           After the input, the array contains the distinct numbers.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class sevenFive {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
