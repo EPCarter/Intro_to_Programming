@@ -16,8 +16,10 @@ Summary: (Convert milliseconds to hours, minutes, and seconds)
           convertMillis(555550000) returns a string 154:19:10.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class sixTwentyfive{
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
