@@ -10,8 +10,8 @@ Summary: (Display pyramid) Write a program that prompts
           sample run.
 */
 
-/*
-Main{
-
+class fiveSeventeen {
+          public static void main(String[] args) {
+                    
+          }
 }
-*/
