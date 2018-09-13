@@ -10,13 +10,19 @@ Summary:
 
 */
 
+
+/* TODO
+Themes (ex. school, hogwarts, hotel, spaceship)
+*/
+
+
 import java.util.Scanner;
 
 public class Delivery_Service{	
   public static void main(String[] args) {		
 		Scanner reader = new Scanner(System.in);
     
-    zero = "Front Desk";
+    zero = "Front Desk"; //different names for each theme
     one = "Introductions";
     two = "Customer";
     three = "Headquarters";
@@ -43,7 +49,11 @@ public class Delivery_Service{
     
     else{
     floor = 
-        0 = Lobby: Help and Directory
+        -3 delete room (you can check out any time you'd like, but you can never leave
+	    -2 = move room
+	    -1=new room
+	    
+	    0 = Lobby: Help and Directory
         1 = 1st Floor:
         2 = 2nd Floor:
         3 = 3rd Floor:
@@ -51,7 +61,7 @@ public class Delivery_Service{
      }
      
    zero{
-   		"Would you like a room, or a recommendation perhaps?"
+   		"Would you like a room, a recommendation, or a change of decore perhaps?" //hogwarts themed, class in muggle potions chemistry is in room 456 and it started fifteen minutes ago. better be sorry or she'll dock us 15pts.
 	      "What type of activities will we be getting up to today?"
    }
 	  
