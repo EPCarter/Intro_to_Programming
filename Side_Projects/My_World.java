@@ -18,7 +18,7 @@ Themes (ex. school, hogwarts, hotel, spaceship)
 
 import java.util.Scanner;
 
-public class Delivery_Service{	
+public class My_World{	
   public static void main(String[] args) {		
 		Scanner reader = new Scanner(System.in);
     
