@@ -15,8 +15,10 @@ Summary: (Find the smallest element) Write a method that finds
           value, and displays the minimum value.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class sevenNine {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
