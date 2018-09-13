@@ -27,8 +27,10 @@ Summary: (Game: nine heads and tails) Nine coins are placed in a 3-by-3
             for H and 1 for T , the output is correct.
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class eightEleven{
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
