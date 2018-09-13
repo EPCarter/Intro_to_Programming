@@ -18,8 +18,14 @@ Summary: (Algebra: solve 2 * 2 linear equations) You can use Cramer’s rule
           (Hint: Use the equations given first to identify what numeric value replaces which number. In this case, a is 3.4.)
 */
 
-/*
-Main{
+import java.util.Scanner; //? Can I import this anywhere so long as it's before it's actually called? (eg. line 23.5)
+
+public class threeTwoThree{	
+  public static void main(String[] args) {		
+		Scanner reader = new Scanner(System.in);	
+		System.out.print("" + );
+		float w = reader.nextFloat();
+		if(){	
           float a;
           float b;
           float c;
@@ -41,5 +47,6 @@ Main{
           println "X = " x;
           println "Y = " y;
           
-}
-*/
+                              }
+                    }
+  }
