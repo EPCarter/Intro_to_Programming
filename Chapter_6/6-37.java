@@ -21,8 +21,10 @@ Summary: (Format an integer) Write a method with the following
           format(number, width).
 */
 
-/*
-Main{
+import java.util.Scanner;
 
+class sixThirtyseven {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
