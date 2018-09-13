@@ -9,9 +9,10 @@ Summary: (Display pyramid) Write a program that prompts
           displays a pyramid, as shown in the following 
           sample run.
 */
+import java.util.Scanner;
 
 class fiveSeventeen {
           public static void main(String[] args) {
-                    
+           Scanner reader = new Scanner(System.in);         
           }
 }
