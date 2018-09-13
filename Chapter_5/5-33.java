@@ -13,10 +13,24 @@ Summary: (Perfect number) A positive integer is called
           Write a program to find all these four numbers.
 */
 
-import java.util.Scanner;
-
 class fiveThirtythree{
           public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
+                    int w = 0;
+                    int x = 0;
+                    int y = 0;
+                    int z = 0;
+                    
+                   while(x <= 10000){
+                     if(x % y <= 0){
+                          //y is divisible
+                          y++;
+                    }
+                    else{
+                       y++;
+                    }
+                    
+                    
+                    System.out.println(z + "is a perfect number.");
+                    x++;
           }
 }
