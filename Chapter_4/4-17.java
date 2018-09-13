@@ -10,8 +10,10 @@ Summary: (Days of a month) Write a program that prompts the user
           the number of days in the month.
 */
 
-/*
-Main{
+import java.util.regex
+
+class Untitled {
+	public static void main(String[] args) {
 
           int year = userinput "Enter Year (YYYY): "
           string month = userinput "Enter Month (Mmm): "
@@ -64,5 +66,5 @@ Main{
 
           
           System.out.println("The month of " + month + "in " + year + hads + days + "days in it.");
+          }
 }
-*/
