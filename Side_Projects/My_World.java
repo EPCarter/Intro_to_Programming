@@ -6,8 +6,7 @@ Course: CSCI 1105 - Introduction to Programming
 Assignment:
 Date: Sept. 13, 2018
 
-Summary: Framework for a Delivery Service that acts as an additional step between sellers and buyers, acting as a quality assurance and assembly, removing packaging before sending on to the customer already ready to go, or as close as can, though with notes. 
-
+Summary:
 
 */
 
@@ -17,18 +16,18 @@ public class Delivery_Service{
   public static void main(String[] args) {		
 		Scanner reader = new Scanner(System.in);
     
-    zero = "Lobby";
+    zero = "Front Desk";
     one = "Introductions";
-		two = "Customer";
+    two = "Customer";
     three = "Headquarters";
     four = "Hubs";
     five = "3rd Party";
     
    System.out.println("Directory" + ln + ln + "0: " + zero + ln + "1st Floor: " + one + ln "2nd Floor: " + two + ln + "3rd Floor: " + three + ln + "4th Floor: " + four + ln + "5th Floor: " + five + ln);
-   System.out.print("Which Floor: ");
+   System.out.print("Which Floor: "); //minus values are room numbers (ex. 10 = Tenth Floor, -345 = Room 345 or 3rd Floor Room #45) (what of -3456? Floor 34 room 56 or floor 345 room 6) (Decimal options?)
     
     try{
-    int floor = reader.nextInt();
+    float floor = reader.nextFloat();
     
     }
     
@@ -36,10 +35,11 @@ public class Delivery_Service{
           //convert to string to number (ex. Nine = Floor 9 = 9), try again
     }
     
-    if(floor = -966){	
-    System.out.print("We all float down here..." + "Wuah Ha! " * downHere);
+    if(floor = -666){	
+    System.out.print("We all float down here..." + "Wuah Ha! " * floor);
    
     }
+	  
     
     else{
     floor = 
@@ -50,10 +50,17 @@ public class Delivery_Service{
      //go to floor number
      }
      
-   
+   zero{
+   		"Would you like a room, or a recommendation perhaps?"
+	      "What type of activities will we be getting up to today?"
+   }
+	  
    one{
       0: Directory change floor name or Lobby option
-   
+   	Rename floor, new room, move room to other place or swap places or inbetween places
+	
+	      
+	      
    }
    
    two{
