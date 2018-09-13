@@ -14,9 +14,10 @@ Summary: (Count vowels and consonants) Assume letters
           character to simplify the conditions of your 
           if statement
 */
+import java.util.Scanner;
 
-/*
-Main{
-
+class fiveFourtynine {
+          public static void main(String[] args) {
+           Scanner reader = new Scanner(System.in);         
+          }
 }
-*/
