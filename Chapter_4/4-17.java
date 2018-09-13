@@ -12,13 +12,13 @@ Summary: (Days of a month) Write a program that prompts the user
 
 import java.util.regex
 
-class Untitled {
+class fourSeventeen {
 	public static void main(String[] args) {
 
           int year = userinput "Enter Year (YYYY): "
           string month = userinput "Enter Month (Mmm): "
           string hads = has;
-          int days = 31;
+          int days = 0;
           
           //TODO format month correctly (Take three letters, 1st uppercase, 2-3 lowercase)
           
