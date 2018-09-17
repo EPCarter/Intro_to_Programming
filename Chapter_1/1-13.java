@@ -1,77 +1,94 @@
+		
 /*
-Author: Erik Carter
-Email: Carter.Eri7200@stu.stech.edu
-Course: CSCI 1105 - Introduction to Programming
-Assignment: 1-13
-Date: .  2018
-Summary: (Algebra: solve 2 * 2 linear equations) You can use Cramer’s rule to solve the following 2 * 2 system of linear equation:
+		Author: Erik Carter
+		Email: Carter.Eri7200@stu.stech.edu
+		Course: CSCI 1105 - Introduction to Programming
+		Assignment: 3-3
+		Date: Sept. 17  2018
+		Summary: (Algebra: solve 2 * 2 linear equations) A linear equation can 
+							be solved using Cramer’s rule given in Programming Exercise 1.13
+							(shown below). Write a program that prompts the user to enter 
+							a, b, c, d, e, and f and displays the result. If ad - bc is 0, 
+							report that “The equation has no solution.”
+									
+									ax + by = e
+									cx + dy = f
+									x = (ed - bf) / (ad - bc)
+									y = (af - ec) / (ad - bc)
+
+							(Hint: Only solve the equations below if ad - bc is not 0.)
+*/
+
+import java.util.Scanner;
+
+class threeThree {
+		public static void main(String[] args) {
+				Scanner reader = new Scanner(System.in);
+				
+				System.out.print("Enter 0 for Example: ");
+				double zero = reader.nextDouble();
+				double a = 0;
+				double b = 0;
+				double c = 0;
+				double d = 0;
+				double e = 0;
+				double f = 0;
+				double x = 0;
+				double y = 0;
+				
+				
+		if(zero == 0){
+				a = 3.4;
+					System.out.println("a = " + a);
+				b = 50.2;
+					System.out.println("b = " + b);
+				c = 2.1;
+					System.out.println("c = " + c);
+				d = 0.55;
+					System.out.println("d = " + d);
+				e = 44.5;
+					System.out.println("e = " + e);
+				f = 5.9;
+					System.out.println("f = " + f);	
+					
+				x = ((e * d) - (b * f)) / ((a * d) - (b * c)); 
+				y = ((a * f) - (e * c)) / ((a * d) - (b * c));
+				
+				}
+				
+		else{
+			
+					System.out.print("Input a: ");
+					a = reader.nextDouble();
+				
+					System.out.print("Input b: ");
+					b = reader.nextDouble();
+				
+					System.out.print("Input c: ");
+					c = reader.nextDouble();
+				
+					System.out.print("Input d: ");
+					d = reader.nextDouble();
+				
+					System.out.print("Input e: "); 
+					e = reader.nextDouble();
+				
+					System.out.print("Input f: ");
+					f = reader.nextDouble();
+					
+					x = ((e * d) - (b * f)) / ((a * d) - (b * c)); 
+					y = ((a * f) - (e * c)) / ((a * d) - (b * c));	
+				 }
+				
 						
-						ax + by = e
-						x = (ed - bf) / (ad - bc)
-						cx + dy - f
-						y = (af - ec) / (ad - bc)
-					
-					Write a program that solves the following equation and displays the value for x and y:
-						3.4x + 50.2y = 44.5
-						2.1x + 0.55y = 5.9
+		double test = (a * d) - (b * c);					
+		
+		if(test == 0){
+			System.out.println("The equation has no solution.");
+			}	
 
-					(Hint: Use the equations given first to identify what numeric value replaces which number. In this case, a is 3.4.)
-					
-					x = (ed - bf) / (ad - bc)
-					cx = dy - f
-					y = (af - ec) / (ad - bc)
-					
-					3.4x + 50.2y - 44.5 = 2.1x + 0.55y - 5.9
-					1.3x + 49.65y - 38.6 = 0
-*/
-
-public class oneThirteen{	
-	public static void main(String[] args) {		
-	
-				
-				
-				float x = 1;
-					//x = (-33.1f * y) + 29.69f;
-				float y = 1;
-					//y = (-.0261f * x) + 0.77744f;
-				System.out.println("X = " + x);
-				System.out.println("Y = " + y);
+			else{						
+			System.out.println("The Answer is: (" + x + ", " + y + ")");
+			}
+		}
 	}
-}
-
-/*
-			String firstEq = "3.4x + 50.2y = 44.5";
-			String secondEq = "2.1x + 0.55y = 5.9";
-			float aOne = 3.4f;
-			float bOne = 50.2f;
-			float aTwo = 2.1f;
-			float bTwo = 0.55f;
-			float cOne = ((dOne * yOne) - fOne) / xOne;
-			float dOne = ((cOne * xOne) + fOne) / yOne;
-			float c = ((d * y) - f) / x;
-			float d = ((c * x) + f) / y;
-			float eOne = 0;
-			float eTwo = 0;
-			float f = 0;
-			float f = 0;
-			float xOne = ((eOne * d) - (bOne * f)) / ((aOne * d) - (bOne * c));
-			float yOne = ((aOne * f) - (eOne * c)) / ((aOne * d) - (bOne * c));
-			float xTwo = ((eTwo * d) - (bTwo * f)) / ((aTwo * d) - (bTwo * c));
-			float yTwo = ((eTwo * d) - (bTwo * f)) / ((aTwo * d) - (bTwo * c));
-
-System.out.println("For the equations (ax + by = e): " + firstEq + " and " + secondEq + ": ");
-System.out.println("");
-System.out.println("xOne = " + xOne);
-System.out.println("yOne = " + yOne);
-System.out.println("xTwo = " + xTwo);
-System.out.println("yTwo = " + yTwo);
-System.out.println("aOne = " + aOne);
-System.out.println("bOne = " + bOne);
-System.out.println("aTwo = " + aTwo);
-System.out.println("bTwo = " + bTwo);
-System.out.println("c = " + c);
-System.out.println("d = " + d);
-System.out.println("eOne = " + eOne);
-System.out.println("eTwo = " + eTwo);
-System.out.println("f = " + f);
-*/
