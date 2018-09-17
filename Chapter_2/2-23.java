@@ -16,13 +16,16 @@ class twoTwentythree {
 	public static void main(String[] args) {
 					Scanner reader = new Scanner(System.in);
 					
-					float distance = user input "Distance (mi):"
-					float efficiency = user input "Efficiency (mi/gal):"
-					float price = user input "Price ($/gal): $"
-					float tripCost;
+					System.out.print("Distance (mi): ");
+					float distance = reader.nextFloat(); 
 					
-					tripCost = distance * efficiency * price;
+					System.out.print("Efficiency (mi/gal): ");
+					float efficiency = reader.nextFloat(); 
 					
-					system.out.println("Trip Cost: $" tripcost);				
+					System.out.print("Price ($/gal): $");
+					float price = reader.nextFloat();
+					
+					float tripCost = distance * efficiency * price;
+					System.out.print("Trip Cost: $" + tripCost);				
 	}
 }
