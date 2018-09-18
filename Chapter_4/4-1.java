@@ -57,7 +57,8 @@ class fourOne {
 				double side = (radius * 2) * (Math.sin(Math.PI / n));
 				double area = (Math.pow(side, 2) * n) / (Math.tan(Math.PI/n) * 4) ;
 							
-				System.out.println("The area is " + area + ", and the side is " + side);
+				System.out.printf("The area is %.2f", area);  
+				System.out.printf(", and the side is %.2f", side);
 
 		}
 }
