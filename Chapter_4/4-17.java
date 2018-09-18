@@ -8,27 +8,30 @@
 	Summary: (Days of a month) Write a program that prompts the user to enter a year and the first three letters of a month  name (with the first letter in uppercase) and displays the number of days in the month.
 */
 
-import java.util.*
+import java.util.*;
 //import java.util.regex;
 //import java.util.Scanner;
 
-class fourSeventeen {
+class FourSeventeen {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		
+		String ly = "normal";
+		int days = 0;
 		System.out.print("Enter a year (YYYY): ");
 		int year = reader.nextInt();
 		
+		
 	if(year >= 2800){ //Revised Julian (after 1923 CE)
-		if(year % 900 == 200 || 600){
+		if(year % 900 == 200 || year %900 == 600){
 			ly = "normal";
 		}
 
-		else if(year % 100 = 0){
+		else if(year % 100 == 0){
 			ly = "normal";
 		}			
 
-		else if(year % 4 = 0){
+		else if(year % 4 == 0){
 			ly = "leap";
 		}			
 
@@ -38,14 +41,14 @@ class fourSeventeen {
 	}
 		
 	else if(year >= 1582 && year < 2800){ //Gregorian (After AD 1582 CE) 
-		if(year % 400 = 0){
+		if(year % 400 == 0){
 			ly = "leap";
-			if(year % 100 = 0){
+			if(year % 100 == 0){
 				ly = "normal";
 			}
 		}
 			
-		else if(year % 4 = 0){
+		else if(year % 4 == 0){
 			ly = "leap";
 		}
 			
@@ -56,38 +59,39 @@ class fourSeventeen {
 		
 	else if(year < 1582 && year > -45 ){	//Julian ( After 45 BCE and 12 CE) 
 		if(year < 12){
-			int earlyJulianLeapYears = year
+			int earlyJulianLeapYears = year;
 			System.out.println("Leap Years during this time period included: ");
 			  
 			 while(earlyJulianLeapYears < 12){
 			  	earlyJulianLeapYears += 3;
 				System.out.print(earlyJulianLeapYears + ", ");
+				
 				if(earlyJulianLeapYears == year){
 			  		ly = "leap";
-			  	}	
+			  	}
+				else{
+				   ly = "normal";
+				  }
 			  }
-			  
-			  else{
-			   ly = "normal";
-			  }
-			}
-			
-			else{
-			
+
+			/*
 			int JulianLeapYears = 12;
 				while(JulianLeapYears < 1582){
 			  		JulianLeapYears += 4;
 					if(JulianLeapYears == year){
 			  			ly = "leap";
-			  	}
+			  				
 				
-				else{
-					ly = "normal"
-				}
-			  }	
-			}
-			
 			else{
+					ly = "normal";
+				}
+			  	
+			*/
+		}
+	}
+	
+	/*		
+	else{
 				System.out.println("How did you get in here? Error 001");
 					String error001 = Scanner.nextString();
 				
@@ -95,11 +99,15 @@ class fourSeventeen {
 					PrintWriter writer = new PrintWriter(error001.txt);
 					writer.write(error001.txt);						//~/Desktop/Calendar/error001.txt
 			}
-			
-		else if (year < -45){
+	*/
+	
+	
+	if (year < -45){
 			ly = "normal";
 			}
 		
+		
+		/*
 		else{
 		System.out.println("How did you get in here? Error 002");
 					String error002 = Scanner.nextString();
@@ -108,9 +116,10 @@ class fourSeventeen {
 					PrintWriter writer = new PrintWriter(error002.txt);
 					writer.write(error002.txt);
 		}
+		*/
 
-		String hads = has;
-		String wis = is;
+		String hads = "has";
+		String wis = "is";
 		
 		if(year < 2018){
 			hads = "had";
@@ -123,9 +132,9 @@ class fourSeventeen {
 		}
 
 		System.out.print("Enter a month (Mmm): ");
-		String month = reader.nextString();
+		String month = reader.next();
 					 
-		if(lr == "leap" && month == "Feb"){
+		if(ly == "leap" && month == "Feb"){
 			days = 29;
 		}
 		
@@ -134,6 +143,8 @@ class fourSeventeen {
 		}
 		
 		else if(year >= 1582){
+			/*
+			
 			if(month == [Apr, Jun, Sep, Nov]){
 				days = 30;
 			}
@@ -145,9 +156,12 @@ class fourSeventeen {
 			else{
 			
 			}
+			*/
 		}
 		
 		else if(year < 1582 && year > -45){
+			
+			/*
 			if(month == [Apr, Jun, Sep, Nov]){
 				days = 30;
 			}
@@ -159,13 +173,14 @@ class fourSeventeen {
 			else{
 			System.out.println("Error 004");
 			}
+			*/
 		}
 		
 		else if(year < -45){ //Roman Republic								
-			if(month == Wag){ //Month of wages (Mercedonius Mensis Intercalari)
+			if(month == "Wag"){ //Month of wages (Mercedonius Mensis Intercalari)
 				days = 24;
 			}
-			
+/*
 			else if(month == [Jan, Apr, Jun, Aug, Sep, Nov, Dec]){
 				days = 29;
 			}
@@ -187,13 +202,13 @@ class fourSeventeen {
 					PrintWriter writer = new PrintWriter(error003.txt);
 					writer.write(error003.txt);
 		}
-	
-System.out.println("The month of " + month + " in year " + year + " " + hads + " " + days + " days in it, and" + wis + " a " + lr + " year.");	
+	*/
+System.out.println("The month of " + month + " in year " + year + " " + hads + " " + days + " days in it, and" + wis + " a " + ly + " year.");	
 	
 	}
 }
 
-
+}
 
 /*
 	
