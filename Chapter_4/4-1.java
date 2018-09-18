@@ -4,7 +4,7 @@ Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: 4-1
-Date: .  2018
+Date: Sept. 17, 2018
 Summary: (Geometry: area of a pentagon) Write a program that 
 					prompts the user to enter the length from the center 
 					of a pentagon to a vertex and computes the area of 
