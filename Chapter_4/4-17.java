@@ -109,10 +109,6 @@ class fourSeventeen {
 					writer.write(error002.txt);
 		}
 
-
-
-		System.out.print("Enter a month (Mmm): ");
-		String month = reader.nextString();
 		String hads = has;
 		String wis = is;
 		
@@ -125,9 +121,16 @@ class fourSeventeen {
 			hads = "has";
 			wis = "is";
 		}
-							 
+
+		System.out.print("Enter a month (Mmm): ");
+		String month = reader.nextString();
+					 
 		if(lr == "leap" && month == "Feb"){
 			days = 29;
+		}
+		
+		else if(month == "Feb"){
+			days = 28;
 		}
 		
 		else if(year >= 1582){
@@ -172,7 +175,7 @@ class fourSeventeen {
 			}
 			
 			else{
-			System.out.println("Error 005");
+				System.out.println("Error 005");
 			}
 		}
 		
@@ -193,75 +196,9 @@ System.out.println("The month of " + month + " in year " + year + " " + hads + "
 
 
 /*
-System.out.println("Enter Year (YYYY): ");
-				int year = reader.nextInt();
-				System.out.println("Enter Month (Mmm): ");
-				String month = reader.next(); 
-				String hads = "has";
-				int days = 0;
-				String lr = "leap";
-				int intArray[];
-			
-	//TODO format month correctly (Take three letters, 1st uppercase, 2-3 lowercase)
-			
-			for (int i = 0; i < arr.length; i++)
-  				System.out.println("Element at index " + i + 
-                                " : "+ arr[i]);
-			
-			leapYearList{
-				1584 + 4
-				
-			}	
-						
-			if(){
-				lr = "leap";
-			}
-			
-			else{
-				lr = "normal";
-			}
-			
-				
-							 
-				if(year > 1582){
-											//Leap years Gregorian 1584AD + 4
-											//
-									//28 [Feb]
-									//29 [Feb]
-									
-					}
-												
-				else if(year >= -45 && year <= 1582){
-											//Julian Jan 45BCE - Oct 1582AD
-											//28 [Feb]
-											//29 [Feb]
-											
-					}
-												
-				else if(
-					}
-
-							
-			
-		}
-}
-
-
-
-/*
-import.java.util.Scanner;
-
-
+	
 System.out.println("Enter a date: "); //accept any permutation
 //room for: (a day) (a month) (a year) (a day of the week) (a day of the year) (holiday) 
-
-if year < 2800 Revised Julian
-
-if year < 1582 Gregorian 1923
-if year is < -45 (45 BCE) Julian
-
-
-
 
 mar || 03 || 3 || march || Mar || nar || *arch || *rch || *ch || **h**
 
@@ -287,13 +224,12 @@ J*
 F
 M
 
-
-[Negative Array     [Year][      Positive Array] 
-
-		double fourRemainder = year % 4;
-		double oneHundredRemainder = % 100
-		double fourHundredRemainder = % 400
-		double rJulianRemainder 
-		
-
+int intArray[];
+			
+	//TODO format month correctly (Take three letters, 1st uppercase, 2-3 lowercase)
+			
+	for (int i = 0; i < arr.length; i++)
+  	System.out.println("Element at index " + i + 
+        " : "+ arr[i]);
+			
 */
