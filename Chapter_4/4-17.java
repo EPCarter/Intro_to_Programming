@@ -4,7 +4,7 @@
 	Email: Carter.Eri7200@stu.stech.edu
 	Course: CSCI 1105 - Introduction to Programming
 	Assignment: 4-17
-	Latest Update: Sept. 19,  2018
+	Latest Update: Sept. 18,  2018
 	Summary: (Days of a month) Write a program that prompts the user to enter a year and the first three letters of a month name (with the first letter in uppercase) and displays the number of days in the month.
 */
 
@@ -15,7 +15,7 @@ class FourSeventeen {
 		Scanner reader = new Scanner(System.in);
 		int count = 0;
 
-		while (count < 5) {
+		while (count < 5) { // Do five rounds before ending, unless year = 0
 			System.out.println("");
 			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
@@ -40,6 +40,11 @@ class FourSeventeen {
 			String november = "30";
 			String december = "31";
 			String wages = "23";
+
+			if (year == 0) {
+				System.out.print(" Exiting...");
+				System.exit(0);
+			}
 
 			if (year <= 2018) {
 				hads = "had";
