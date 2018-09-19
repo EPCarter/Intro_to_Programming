@@ -4,8 +4,8 @@
 	Email: Carter.Eri7200@stu.stech.edu
 	Course: CSCI 1105 - Introduction to Programming
 	Assignment: 4-17
-	Latest Update: Sept. 18,  2018
-	Summary: (Days of a month) Write a program that prompts the user to enter a year and the first three letters of a month  name (with the first letter in uppercase) and displays the number of days in the month.
+	Latest Update: Sept. 19,  2018
+	Summary: (Days of a month) Write a program that prompts the user to enter a year and the first three letters of a month name (with the first letter in uppercase) and displays the number of days in the month.
 */
 
 import java.util.*;
@@ -20,14 +20,11 @@ class FourSeventeen {
 			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
 
-			System.out.print("Enter a month (Mmm): "); // numerical or letters
-			String month = reader.next();
-
 			String calendar = "Gregorian Calendar"; // or Roman Republic, Julian, or Revised Julian
 			String hads = "has"; // or " had ";
 			String wis = "is"; // or " was ";
 			String ly = "normal"; // or " leap ";
-			String days = "31-ish"; // (1-31)
+
 			String era = "CE"; // or BCE
 
 			String january = "31";
@@ -81,6 +78,7 @@ class FourSeventeen {
 				while (earlyJulianLeapYear < 12) {
 					if (year == earlyJulianLeapYear) {
 						ly = "leap";
+						System.out.println("Leap year! ");
 						february = "29";
 					}
 
@@ -89,7 +87,7 @@ class FourSeventeen {
 					}
 
 					earlyJulianLeapYear += 3;
-					// System.out.println(earlyJulianLeapYear);
+					System.out.print(earlyJulianLeapYear + ", ");
 				}
 			}
 
@@ -100,6 +98,7 @@ class FourSeventeen {
 				while (julianLeapYear <= 1576) {
 					if (julianLeapYear == year) {
 						ly = "leap";
+						System.out.println("Leap year! ");
 						february = "29";
 					}
 
@@ -108,7 +107,7 @@ class FourSeventeen {
 					}
 
 					julianLeapYear += 4;
-					// System.out.println(julianLeapYear);
+					// System.out.print(julianLeapYear + ", ");
 				}
 			}
 
@@ -118,6 +117,7 @@ class FourSeventeen {
 				if (year % 100 == 0) {
 					if (year % 400 == 0) {
 						ly = "leap";
+						System.out.println("Leap year! ");
 						february = "29";
 					}
 
@@ -128,6 +128,7 @@ class FourSeventeen {
 
 				else if (year % 4 == 0) {
 					ly = "leap";
+					System.out.println("Leap year! ");
 					february = "29";
 				}
 
@@ -149,73 +150,82 @@ class FourSeventeen {
 
 				else if (year % 4 == 0) {
 					ly = "leap";
+					System.out.println("Leap year! ");
 					february = "29";
 				}
 
 				else {
 					ly = "normal";
 				}
+
 			}
 
+			System.out.print("Enter a month (Mmm): "); // numerical or letters
+			String month = reader.next();
+
+			String monthStandardized = "31-ish";
+			String days = monthStandardized; // (1-31)
+
 			if (month == "Jan") {
-				days = january;
+				monthStandardized = january;
 			}
 
 			else if (month == "Feb") {
-				days = february;
+				monthStandardized = february;
 			}
 
 			else if (month == "Mar") {
-				days = march;
+				monthStandardized = march;
 			}
 
 			else if (month == "Apr") {
-				days = april;
+				monthStandardized = april;
 			}
 
 			else if (month == "May") {
-				days = may;
+				monthStandardized = may;
 			}
 
 			else if (month == "Jun") {
-				days = june;
+				monthStandardized = june;
 			}
 
 			else if (month == "Jul") {
-				days = july;
+				monthStandardized = july;
 			}
 
 			else if (month == "Aug") {
-				days = august;
+				monthStandardized = august;
 			}
 
 			else if (month == "Sep") {
-				days = september;
+				monthStandardized = september;
 			}
 
 			else if (month == "Oct") {
-				days = october;
+				monthStandardized = october;
 			}
 
 			else if (month == "Nov") {
-				days = november;
+				monthStandardized = november;
 			}
 
 			else if (month == "Dec") {
-				days = december;
+				monthStandardized = december;
 			}
 
 			else if (month == "Wag") {
-				days = wages;
+				monthStandardized = wages;
 			}
 
 			else {
-
+				monthStandardized = wages;
 			}
 
+			days = monthStandardized;
+			System.out.println("");
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
-			System.out.println(month2);
 
 		}
 		count++;
