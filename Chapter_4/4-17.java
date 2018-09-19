@@ -18,32 +18,31 @@ class FourSeventeen {
 
 		while (count < 5) {
 			System.out.println("");
-			System.out.print("Enter a year: ");
+			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
 
-			System.out.print("Enter a month: ");
+			System.out.print("Enter a month: "); // numerical or letters
 			String month = reader.next();
 
-			String calendar = "Gregorian Calendar";
+			String calendar = "Gregorian Calendar"; // or Roman Republic, Julian, or Revised Julian
 			String hads = "has"; // or " had ";
 			String wis = "is"; // or " was ";
 			String ly = "normal"; // or " leap ";
-			int days = 0; // (1-31)
-			int day = 1; // (1-31)
-			String era = "CE";
+			String days = "31-ish"; // (1-31)
+			String era = "CE"; // or BCE
 
-			int january = 31;
-			int february = 28;
-			int march = 31;
-			int april = 30;
-			int may = 31;
-			int june = 30;
-			int july = 31;
-			int august = 31;
-			int september = 30;
-			int october = 31;
-			int november = 30;
-			int december = 31;
+			String january = "31";
+			String february = "28";
+			String march = "31";
+			String april = "30";
+			String may = "31";
+			String june = "30";
+			String july = "31";
+			String august = "31";
+			String september = "30";
+			String october = "31";
+			String november = "30";
+			String december = "31";
 
 			if (year <= 2018) {
 				hads = "had";
@@ -150,7 +149,7 @@ class FourSeventeen {
 					ly = "normal";
 				}
 			}
-
+			days = month;
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
 
