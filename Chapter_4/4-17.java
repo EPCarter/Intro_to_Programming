@@ -194,7 +194,7 @@ class FourSeventeen {
 			}
 
 			else if (month == "Oct") {
-				days = november;
+				days = october;
 			}
 
 			else if (month == "Nov") {
@@ -209,8 +209,13 @@ class FourSeventeen {
 				days = wages;
 			}
 
+			else {
+
+			}
+
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
+			System.out.println(month2);
 
 		}
 		count++;
