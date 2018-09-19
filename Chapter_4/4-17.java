@@ -4,7 +4,7 @@
 	Email: Carter.Eri7200@stu.stech.edu
 	Course: CSCI 1105 - Introduction to Programming
 	Assignment: 4-17
-	Latest Update: Sept. 18,  2018
+	Latest Update: Sept. 19,  2018
 	Summary: (Days of a month) Write a program that prompts the user to enter a year and the first three letters of a month name (with the first letter in uppercase) and displays the number of days in the month.
 */
 
@@ -17,6 +17,12 @@ class FourSeventeen {
 
 		while (count < 5) { // Do five rounds before ending, unless year = 0
 			System.out.println("");
+
+			System.out.println("Enter a date: ");
+			String date = reader.next();
+
+			System.out.println("");
+
 			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
 
@@ -164,71 +170,145 @@ class FourSeventeen {
 				}
 
 			}
-
+			System.out.print("");
 			System.out.print("Enter a month (Mmm): "); // numerical or letters
 			String month = reader.next();
 
 			String monthStandardized = "31-ish";
 			String days = monthStandardized; // (1-31)
 
-			if (month == "Jan") {
-				monthStandardized = january;
+			/*
+			 * if (month == "Jan") { monthStandardized = january; }
+			 * 
+			 * else if (month == "Feb") { monthStandardized = february; }
+			 * 
+			 * else if (month == "Mar") { monthStandardized = march; }
+			 * 
+			 * else if (month == "Apr") { monthStandardized = april; }
+			 * 
+			 * else if (month == "May") { monthStandardized = may; }
+			 * 
+			 * else if (month == "Jun") { monthStandardized = june; }
+			 * 
+			 * else if (month == "Jul") { monthStandardized = july; }
+			 * 
+			 * else if (month == "Aug") { monthStandardized = august; }
+			 * 
+			 * else if (month == "Sep") { monthStandardized = september; }
+			 * 
+			 * else if (month == "Oct") { monthStandardized = october; }
+			 * 
+			 * else if (month == "Nov") { monthStandardized = november; }
+			 * 
+			 * else if (month == "Dec") { monthStandardized = december; }
+			 * 
+			 * else if (month == "Wag") { monthStandardized = wages; }
+			 * 
+			 * else { monthStandardized = wages; }
+			 * 
+			 * days = monthStandardized;
+			 */
+
+			int countJan = 0;
+			int countFeb = 0;
+			int countMar = 0;
+			int countApr = 0;
+			int countMay = 0;
+			int countJun = 0;
+			int countJul = 0;
+			int countAug = 0;
+			int countSep = 0;
+			int countOct = 0;
+			int countNov = 0;
+			int countDec = 0;
+			int countWag = 0;
+
+			if (date.matches("/January|Jan|Ja|nu/gi")) {
+				countJan++;
 			}
 
-			else if (month == "Feb") {
-				monthStandardized = february;
+			if (date.matches("/February|Feb|F|ru/gi")) {
+				countFeb++;
+
+			}
+			if (date.matches("/March|Mar|Mar|ch|h/gi")) {
+				countMar++;
 			}
 
-			else if (month == "Mar") {
-				monthStandardized = march;
+			if (date.matches("/April|Ap|il|ri/gi")) {
+				countApr++;
 			}
 
-			else if (month == "Apr") {
-				monthStandardized = april;
+			if (date.matches("/May|May|ay/gi")) {
+				countMay++;
 			}
 
-			else if (month == "May") {
-				monthStandardized = may;
+			if (date.matches("/June|Jun|un|ne/gi")) {
+				countJun++;
 			}
 
-			else if (month == "Jun") {
-				monthStandardized = june;
+			if (date.matches("/July|Jul|ul|ly/gi")) {
+				countJul++;
 			}
 
-			else if (month == "Jul") {
-				monthStandardized = july;
+			if (date.matches("/August|Aug|st|Au/gi")) {
+				countAug++;
 			}
 
-			else if (month == "Aug") {
-				monthStandardized = august;
+			if (date.matches("/September|Sept|pt/gi")) {
+				countSep++;
 			}
 
-			else if (month == "Sep") {
-				monthStandardized = september;
+			if (date.matches("/October|Oct|ober/gi")) {
+				countOct++;
 			}
 
-			else if (month == "Oct") {
-				monthStandardized = october;
+			if (date.matches("/November|Nov|v|no/gi")) {
+				countNov++;
 			}
 
-			else if (month == "Nov") {
-				monthStandardized = november;
+			if (date.matches("/December|Dec|d/gi")) {
+				countDec++;
 			}
 
-			else if (month == "Dec") {
-				monthStandardized = december;
+			if (date.matches("/Mercedonius Mensis Intercalari|Wages|Wag/gis")) {
+				countWag++;
 			}
 
-			else if (month == "Wag") {
-				monthStandardized = wages;
-			}
+			List<Integer> ranking = new ArrayList<Integer>();
+			ranking.add(countJan);
+			ranking.add(countFeb);
+			ranking.add(countMar);
+			ranking.add(countApr);
+			ranking.add(countMay);
+			ranking.add(countJun);
+			ranking.add(countJul);
+			ranking.add(countAug);
+			ranking.add(countSep);
+			ranking.add(countOct);
+			ranking.add(countNov);
+			ranking.add(countDec);
+			ranking.add(countWag);
 
-			else {
-				monthStandardized = wages;
-			}
+			int monthRank = Collections.max(ranking);
 
-			days = monthStandardized;
+			// System.out.println(monthRank + " is most likely.");
 			System.out.println("");
+			System.out.println("Month Likelihood Scores: ");
+			System.out.println("Jan: " + countJan);
+			System.out.println("Feb: " + countFeb);
+			System.out.println("Mar: " + countMar);
+			System.out.println("Apr: " + countApr);
+			System.out.println("May: " + countMay);
+			System.out.println("Jun: " + countJun);
+			System.out.println("Jul: " + countJul);
+			System.out.println("Aug: " + countAug);
+			System.out.println("Sep: " + countSep);
+			System.out.println("Oct: " + countOct);
+			System.out.println("Nov: " + countNov);
+			System.out.println("Dec: " + countDec);
+			System.out.println("Wag: " + countWag);
+
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
 
@@ -237,19 +317,3 @@ class FourSeventeen {
 		reader.close();
 	}
 }
-
-// Month Permutations
-
-// 1, January, Jan*, Ja*, *nu*, 
-// 2, February, Feb*, F*, *ru*, 
-// 3, March, Mar, Mar*, *ch, *h 
-// 4, April, Ap*, *il, *ri* 
-// 5, May, May, *ay 
-// 6, June, Jun*, *un, *ne 
-// 7, July, Jul*, *ul*, *ly,
-// 8, August, Aug*, *st, *Au, 
-// 9, September, Sept*, *pt 
-// 10, October, Oct*, 
-// 11, November, Nov*, 
-// 12, December, Dec*, 
-// 13, Mercedonius Mensis Intercalari, Wages, Wag*,
