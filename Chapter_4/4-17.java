@@ -13,7 +13,6 @@ import java.util.*;
 class FourSeventeen {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-
 		int count = 0;
 
 		while (count < 5) {
@@ -21,7 +20,7 @@ class FourSeventeen {
 			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
 
-			System.out.print("Enter a month: "); // numerical or letters
+			System.out.print("Enter a month (Mmm): "); // numerical or letters
 			String month = reader.next();
 
 			String calendar = "Gregorian Calendar"; // or Roman Republic, Julian, or Revised Julian
@@ -43,6 +42,7 @@ class FourSeventeen {
 			String october = "31";
 			String november = "30";
 			String december = "31";
+			String wages = "23";
 
 			if (year <= 2018) {
 				hads = "had";
@@ -65,13 +65,13 @@ class FourSeventeen {
 			if (year < -45) { // Roman Republic Calendar
 				calendar = "Roman Republic Calendar";
 				ly = "normal";
-				january = 29;
-				april = 29;
-				june = 29;
-				august = 29;
-				september = 29;
-				november = 29;
-				december = 29;
+				january = "29";
+				april = "29";
+				june = "29";
+				august = "29";
+				september = "29";
+				november = "29";
+				december = "29";
 			}
 
 			else if (year >= -45 && year < 12) { // Early Julian Calendar
@@ -81,6 +81,7 @@ class FourSeventeen {
 				while (earlyJulianLeapYear < 12) {
 					if (year == earlyJulianLeapYear) {
 						ly = "leap";
+						february = "29";
 					}
 
 					else {
@@ -90,13 +91,16 @@ class FourSeventeen {
 					earlyJulianLeapYear += 3;
 					// System.out.println(earlyJulianLeapYear);
 				}
-			} else if (year >= 12 && year < 1582) { // Julian Calendar
+			}
+
+			else if (year >= 12 && year < 1582) { // Julian Calendar
 				calendar = "Julian Calendar";
 				int julianLeapYear = 12;
 
 				while (julianLeapYear <= 1576) {
 					if (julianLeapYear == year) {
 						ly = "leap";
+						february = "29";
 					}
 
 					else {
@@ -114,6 +118,7 @@ class FourSeventeen {
 				if (year % 100 == 0) {
 					if (year % 400 == 0) {
 						ly = "leap";
+						february = "29";
 					}
 
 					else {
@@ -123,6 +128,7 @@ class FourSeventeen {
 
 				else if (year % 4 == 0) {
 					ly = "leap";
+					february = "29";
 				}
 
 				else {
@@ -143,13 +149,66 @@ class FourSeventeen {
 
 				else if (year % 4 == 0) {
 					ly = "leap";
+					february = "29";
 				}
 
 				else {
 					ly = "normal";
 				}
 			}
-			days = month;
+
+			if (month == "Jan") {
+				days = january;
+			}
+
+			else if (month == "Feb") {
+				days = february;
+			}
+
+			else if (month == "Mar") {
+				days = march;
+			}
+
+			else if (month == "Apr") {
+				days = april;
+			}
+
+			else if (month == "May") {
+				days = may;
+			}
+
+			else if (month == "Jun") {
+				days = june;
+			}
+
+			else if (month == "Jul") {
+				days = july;
+			}
+
+			else if (month == "Aug") {
+				days = august;
+			}
+
+			else if (month == "Sep") {
+				days = september;
+			}
+
+			else if (month == "Oct") {
+				days = november;
+			}
+
+			else if (month == "Nov") {
+				days = november;
+			}
+
+			else if (month == "Dec") {
+				days = december;
+			}
+
+			else if (month == "Wag") {
+				days = wages;
+			}
+
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
 
