@@ -9,6 +9,8 @@
 */
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class FourSeventeen {
 	public static void main(String[] args) {
@@ -18,7 +20,7 @@ class FourSeventeen {
 		while (count < 5) { // Do five rounds before ending, unless year = 0
 			System.out.println("");
 
-			System.out.println("Enter a date: ");
+			System.out.print("Enter a date: ");
 			String date = reader.next();
 
 			System.out.println("");
@@ -26,6 +28,9 @@ class FourSeventeen {
 			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
 
+			System.out.println("");
+
+			String month = "";
 			String calendar = "Gregorian Calendar"; // or Roman Republic, Julian, or Revised Julian
 			String hads = "has"; // or " had ";
 			String wis = "is"; // or " was ";
@@ -46,6 +51,7 @@ class FourSeventeen {
 			String november = "30";
 			String december = "31";
 			String wages = "23";
+			int days = 0;
 
 			if (year == 0) {
 				System.out.print(" Exiting...");
@@ -170,44 +176,10 @@ class FourSeventeen {
 				}
 
 			}
-			System.out.print("");
-			System.out.print("Enter a month (Mmm): "); // numerical or letters
-			String month = reader.next();
+			System.out.println("");
 
-			String monthStandardized = "31-ish";
-			String days = monthStandardized; // (1-31)
-
-			/*
-			 * if (month == "Jan") { monthStandardized = january; }
-			 * 
-			 * else if (month == "Feb") { monthStandardized = february; }
-			 * 
-			 * else if (month == "Mar") { monthStandardized = march; }
-			 * 
-			 * else if (month == "Apr") { monthStandardized = april; }
-			 * 
-			 * else if (month == "May") { monthStandardized = may; }
-			 * 
-			 * else if (month == "Jun") { monthStandardized = june; }
-			 * 
-			 * else if (month == "Jul") { monthStandardized = july; }
-			 * 
-			 * else if (month == "Aug") { monthStandardized = august; }
-			 * 
-			 * else if (month == "Sep") { monthStandardized = september; }
-			 * 
-			 * else if (month == "Oct") { monthStandardized = october; }
-			 * 
-			 * else if (month == "Nov") { monthStandardized = november; }
-			 * 
-			 * else if (month == "Dec") { monthStandardized = december; }
-			 * 
-			 * else if (month == "Wag") { monthStandardized = wages; }
-			 * 
-			 * else { monthStandardized = wages; }
-			 * 
-			 * days = monthStandardized;
-			 */
+			// System.out.print("Enter a month (Mmm): "); // numerical or letters
+			// String month = reader.next();
 
 			int countJan = 0;
 			int countFeb = 0;
@@ -223,91 +195,83 @@ class FourSeventeen {
 			int countDec = 0;
 			int countWag = 0;
 
-			if (date.matches("/January|Jan|Ja|nu/gi")) {
+			String janPattern = "(?i)January|Jan|Ja|nu";
+			String febPattern = "(?i)February|Feb|F|ru";
+			String marPattern = "(?i)March|Mar|Mar|ch|h";
+			String aprPattern = "(?i)April|Ap|il|ri";
+			String mayPattern = "(?i)May|May|ay";
+			String junPattern = "(?i)June|Jun|un|ne";
+			String julPattern = "(?i)July|Jul|ul|ly";
+			String augPattern = "(?i)August|Aug|st|Au";
+			String sepPattern = "(?i)September|Sept|pt";
+			String octPattern = "(?i)October|Oct|ober";
+			String novPattern = "(?i)November|Nov|v|no";
+			String decPattern = "(?i)December|Dec|d";
+			String wagPattern = "(?i)Mercedonius Mensis Intercalari|Wages|Wag";
+
+			if (date.matches(janPattern)) {
 				countJan++;
 			}
 
-			if (date.matches("/February|Feb|F|ru/gi")) {
+			if (date.matches(febPattern)) {
 				countFeb++;
 
 			}
-			if (date.matches("/March|Mar|Mar|ch|h/gi")) {
+			if (date.matches(marPattern)) {
 				countMar++;
 			}
 
-			if (date.matches("/April|Ap|il|ri/gi")) {
+			if (date.matches(aprPattern)) {
 				countApr++;
 			}
 
-			if (date.matches("/May|May|ay/gi")) {
+			if (date.matches(mayPattern)) {
 				countMay++;
 			}
 
-			if (date.matches("/June|Jun|un|ne/gi")) {
+			if (date.matches(junPattern)) {
 				countJun++;
 			}
 
-			if (date.matches("/July|Jul|ul|ly/gi")) {
+			if (date.matches(julPattern)) {
 				countJul++;
 			}
 
-			if (date.matches("/August|Aug|st|Au/gi")) {
+			if (date.matches(augPattern)) {
 				countAug++;
 			}
 
-			if (date.matches("/September|Sept|pt/gi")) {
+			if (date.matches(sepPattern)) {
 				countSep++;
 			}
 
-			if (date.matches("/October|Oct|ober/gi")) {
+			if (date.matches(octPattern)) {
 				countOct++;
 			}
 
-			if (date.matches("/November|Nov|v|no/gi")) {
+			if (date.matches(novPattern)) {
 				countNov++;
 			}
 
-			if (date.matches("/December|Dec|d/gi")) {
+			if (date.matches(decPattern)) {
 				countDec++;
 			}
 
-			if (date.matches("/Mercedonius Mensis Intercalari|Wages|Wag/gis")) {
+			if (date.matches(wagPattern)) {
 				countWag++;
 			}
 
-			List<Integer> ranking = new ArrayList<Integer>();
-			ranking.add(countJan);
-			ranking.add(countFeb);
-			ranking.add(countMar);
-			ranking.add(countApr);
-			ranking.add(countMay);
-			ranking.add(countJun);
-			ranking.add(countJul);
-			ranking.add(countAug);
-			ranking.add(countSep);
-			ranking.add(countOct);
-			ranking.add(countNov);
-			ranking.add(countDec);
-			ranking.add(countWag);
+			int largest = 0;
 
-			int monthRank = Collections.max(ranking);
+			int[] ranking = { countJan, countFeb, countMar, countApr, countMay, countJun, countJul, countAug, countSep,
+					countOct, countNov, countDec, countWag };
 
-			// System.out.println(monthRank + " is most likely.");
-			System.out.println("");
-			System.out.println("Month Likelihood Scores: ");
-			System.out.println("Jan: " + countJan);
-			System.out.println("Feb: " + countFeb);
-			System.out.println("Mar: " + countMar);
-			System.out.println("Apr: " + countApr);
-			System.out.println("May: " + countMay);
-			System.out.println("Jun: " + countJun);
-			System.out.println("Jul: " + countJul);
-			System.out.println("Aug: " + countAug);
-			System.out.println("Sep: " + countSep);
-			System.out.println("Oct: " + countOct);
-			System.out.println("Nov: " + countNov);
-			System.out.println("Dec: " + countDec);
-			System.out.println("Wag: " + countWag);
+			for (int i = 1; i < ranking.length; i++) {
+				if (ranking[i] > ranking[largest])
+					largest = i;
+			}
+			
+			System.out.println(largest);
 
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
@@ -317,3 +281,58 @@ class FourSeventeen {
 		reader.close();
 	}
 }
+
+/*
+ * System.out.println("Jan: " + countJan); System.out.println("Feb: " +
+ * countFeb); System.out.println("Mar: " + countMar); System.out.println("Apr: "
+ * + countApr); System.out.println("May: " + countMay);
+ * System.out.println("Jun: " + countJun); System.out.println("Jul: " +
+ * countJul); System.out.println("Aug: " + countAug); System.out.println("Sep: "
+ * + countSep); System.out.println("Oct: " + countOct);
+ * System.out.println("Nov: " + countNov); System.out.println("Dec: " +
+ * countDec); System.out.println("Wag: " + countWag);
+ */
+
+/*
+ * if (date.toLowerCase().contains("Ja")) { countJan++; } String
+ * monthStandardized = "31-ish"; String days = monthStandardized; // (1-31)
+ * 
+ * 
+ * if (month == "Jan") { monthStandardized = january; }
+ * 
+ * else if (month == "Feb") { monthStandardized = february; }
+ * 
+ * else if (month == "Mar") { monthStandardized = march; }
+ * 
+ * else if (month == "Apr") { monthStandardized = april; }
+ * 
+ * else if (month == "May") { monthStandardized = may; }
+ * 
+ * else if (month == "Jun") { monthStandardized = june; }
+ * 
+ * else if (month == "Jul") { monthStandardized = july; }
+ * 
+ * else if (month == "Aug") { monthStandardized = august; }
+ * 
+ * else if (month == "Sep") { monthStandardized = september; }
+ * 
+ * else if (month == "Oct") { monthStandardized = october; }
+ * 
+ * else if (month == "Nov") { monthStandardized = november; }
+ * 
+ * else if (month == "Dec") { monthStandardized = december; }
+ * 
+ * else if (month == "Wag") { monthStandardized = wages; }
+ * 
+ * else { monthStandardized = wages; }
+ * 
+ * days = monthStandardized;
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
