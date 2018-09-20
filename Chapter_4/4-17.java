@@ -9,8 +9,6 @@
 */
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 class FourSeventeen {
 	public static void main(String[] args) {
@@ -31,9 +29,7 @@ class FourSeventeen {
 			String hads = "has"; // or " had ";
 			String wis = "is"; // or " was ";
 			String ly = "normal"; // or " leap ";
-
 			String era = "CE"; // or BCE
-
 			String january = "31";
 			String february = "28";
 			String march = "31";
@@ -95,10 +91,6 @@ class FourSeventeen {
 						february = "29";
 					}
 
-					else {
-
-					}
-
 					earlyJulianLeapYear += 3;
 					System.out.print(earlyJulianLeapYear + ", ");
 				}
@@ -148,7 +140,6 @@ class FourSeventeen {
 				else {
 					ly = "normal";
 				}
-
 			}
 
 			else if (year >= 2800) { // Revised Julian Calendar
@@ -170,12 +161,9 @@ class FourSeventeen {
 				else {
 					ly = "normal";
 				}
-
 			}
-			System.out.println("");
 
-			// System.out.print("Enter a month (Mmm): "); // numerical or letters
-			// String month = reader.next();
+			System.out.println("");
 
 			int countJan = 0;
 			int countFeb = 0;
@@ -346,7 +334,6 @@ class FourSeventeen {
 
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
-
 		}
 		count++;
 		reader.close();
