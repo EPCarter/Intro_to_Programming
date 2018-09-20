@@ -20,15 +20,11 @@ class FourSeventeen {
 		while (count < 5) { // Do five rounds before ending, unless year = 0
 			System.out.println("");
 
-			System.out.print("Enter a date: ");
+			System.out.print("Enter a Month: ");
 			String date = reader.next();
-
-			System.out.println("");
 
 			System.out.print("Enter a year: "); // catch strings
 			int year = reader.nextInt();
-
-			System.out.println("");
 
 			String month = "";
 			String calendar = "Gregorian Calendar"; // or Roman Republic, Julian, or Revised Julian
@@ -51,7 +47,7 @@ class FourSeventeen {
 			String november = "30";
 			String december = "31";
 			String wages = "23";
-			int days = 0;
+			String days = "";
 
 			if (year == 0) {
 				System.out.print(" Exiting...");
@@ -195,19 +191,19 @@ class FourSeventeen {
 			int countDec = 0;
 			int countWag = 0;
 
-			String janPattern = "(?i)January|Jan|Ja|nu";
-			String febPattern = "(?i)February|Feb|F|ru";
-			String marPattern = "(?i)March|Mar|Mar|ch|h";
-			String aprPattern = "(?i)April|Ap|il|ri";
-			String mayPattern = "(?i)May|May|ay";
-			String junPattern = "(?i)June|Jun|un|ne";
-			String julPattern = "(?i)July|Jul|ul|ly";
-			String augPattern = "(?i)August|Aug|st|Au";
-			String sepPattern = "(?i)September|Sept|pt";
-			String octPattern = "(?i)October|Oct|ober";
-			String novPattern = "(?i)November|Nov|v|no";
-			String decPattern = "(?i)December|Dec|d";
-			String wagPattern = "(?i)Mercedonius Mensis Intercalari|Wages|Wag";
+			String janPattern = "(?i)January|Jan|Ja|nu|1|01";
+			String febPattern = "(?i)February|Feb|F|ru|2|02";
+			String marPattern = "(?i)March|Mar|Mar|ch|h|3|03";
+			String aprPattern = "(?i)April|Ap|il|ri|4|04";
+			String mayPattern = "(?i)May|May|ay|5|05";
+			String junPattern = "(?i)June|Jun|un|ne|6|06";
+			String julPattern = "(?i)July|Jul|ul|ly|7|07";
+			String augPattern = "(?i)August|Aug|st|Au|8|08";
+			String sepPattern = "(?i)September|Sept|pt|9|09";
+			String octPattern = "(?i)October|Oct|ober|10";
+			String novPattern = "(?i)November|Nov|v|no|11";
+			String decPattern = "(?i)December|Dec|d|12";
+			String wagPattern = "(?i)Mercedonius Mensis Intercalari|Wages|Wag|13";
 
 			if (date.matches(janPattern)) {
 				countJan++;
@@ -270,8 +266,83 @@ class FourSeventeen {
 				if (ranking[i] > ranking[largest])
 					largest = i;
 			}
-			
-			System.out.println(largest);
+
+			if (largest == 0) {
+				largest = 0;
+			}
+
+			else {
+				largest = largest + 1;
+			}
+
+			if (largest == 0) {
+				days = "Error";
+				month = "Error";
+			}
+			if (largest == 1) {
+				days = january;
+				month = "January";
+			}
+
+			else if (largest == 2) {
+				days = february;
+				month = "February";
+			}
+
+			else if (largest == 3) {
+				days = march;
+				month = "March";
+			}
+
+			else if (largest == 4) {
+				days = april;
+				month = "April";
+			}
+
+			else if (largest == 5) {
+				days = may;
+				month = "May";
+			}
+
+			else if (largest == 6) {
+				days = june;
+				month = "June";
+			}
+
+			else if (largest == 7) {
+				days = july;
+				month = "July";
+			}
+
+			else if (largest == 8) {
+				days = august;
+				month = "August";
+			}
+
+			else if (largest == 9) {
+				days = september;
+				month = "September";
+			}
+
+			else if (largest == 10) {
+				days = october;
+				month = "October";
+			}
+
+			else if (largest == 11) {
+				days = november;
+				month = "Nobember";
+			}
+
+			else if (largest == 12) {
+				days = december;
+				month = "December";
+			}
+
+			else if (largest == 13) {
+				days = wages;
+				month = "Wages";
+			}
 
 			System.out.println("According to the " + calendar + ", " + year + " " + era + " " + wis + " a " + ly
 					+ " year and " + month + " " + hads + " " + days + " days in it.");
@@ -281,58 +352,3 @@ class FourSeventeen {
 		reader.close();
 	}
 }
-
-/*
- * System.out.println("Jan: " + countJan); System.out.println("Feb: " +
- * countFeb); System.out.println("Mar: " + countMar); System.out.println("Apr: "
- * + countApr); System.out.println("May: " + countMay);
- * System.out.println("Jun: " + countJun); System.out.println("Jul: " +
- * countJul); System.out.println("Aug: " + countAug); System.out.println("Sep: "
- * + countSep); System.out.println("Oct: " + countOct);
- * System.out.println("Nov: " + countNov); System.out.println("Dec: " +
- * countDec); System.out.println("Wag: " + countWag);
- */
-
-/*
- * if (date.toLowerCase().contains("Ja")) { countJan++; } String
- * monthStandardized = "31-ish"; String days = monthStandardized; // (1-31)
- * 
- * 
- * if (month == "Jan") { monthStandardized = january; }
- * 
- * else if (month == "Feb") { monthStandardized = february; }
- * 
- * else if (month == "Mar") { monthStandardized = march; }
- * 
- * else if (month == "Apr") { monthStandardized = april; }
- * 
- * else if (month == "May") { monthStandardized = may; }
- * 
- * else if (month == "Jun") { monthStandardized = june; }
- * 
- * else if (month == "Jul") { monthStandardized = july; }
- * 
- * else if (month == "Aug") { monthStandardized = august; }
- * 
- * else if (month == "Sep") { monthStandardized = september; }
- * 
- * else if (month == "Oct") { monthStandardized = october; }
- * 
- * else if (month == "Nov") { monthStandardized = november; }
- * 
- * else if (month == "Dec") { monthStandardized = december; }
- * 
- * else if (month == "Wag") { monthStandardized = wages; }
- * 
- * else { monthStandardized = wages; }
- * 
- * days = monthStandardized;
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- */
