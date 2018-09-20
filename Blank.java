@@ -1,27 +1,41 @@
+
 /*
-Author: Erik Carter
-Email: Carter.Eri7200@stu.stech.edu
-Course: CSCI 1105 - Introduction to Programming
-Assignment: 2-1
-Date: Sept. 17,  2018
-Summary: (Convert Celsius to Fahrenheit) Write a program that reads a Celsius degree in a double value from the console, then converts it to Fahrenheit and displays the result. The formula for the conversion is as follows: 
-					
-						fahrenheit = (9 / 5) * celsius + 32
-				(Hint: In Java, 9 / 5 is 1, but 9.0 / 5 is 1.8.)
+	Author: Erik Carter
+	Email: Carter.Eri7200@stu.stech.edu
+	Course: CSCI 1105 - Introduction to Programming
+	Assignment: 4-17
+	Latest Update: Sept. 19,  2018
+	Summary: (Days of a month) Write a program that prompts the user to enter a year and the first three letters of a month name (with the first letter in uppercase) and displays the number of days in the month.
 */
 
-import java.util.Scanner;
+import java.util.*;
 
-class twoOne {
+public class Examples {
 	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);		
-		
-		System.out.print("Enter Celcius: ");		
-		float celsius = reader.nextFloat();
-		
-		float fahrenheit = ((9.0f/5.0f) * celsius) + 32.0f;;
 
-		System.out.println("Celcius: " + celsius + " is Fahrenheit: " + fahrenheit);
+		Scanner reader = new Scanner(System.in);
+		String janPattern = "(?i)January|Jan|Ja|nu|1|01";
+		String febPattern = "(?i)February|Feb|F|ru|2|02";
+
+		System.out.print("Enter a Month: ");
+		String date = reader.next();
+
+		int countJan = 0;
+		int countFeb = 0;
+
+		if (date.matches(janPattern)) {
+		}
+
+		else if (date.matches(febPattern)) {
+		}
+
+		int largest = 0;
+		int[] ranking = { countJan, countFeb };
+
+		for (int i = 1; i < ranking.length; i++) {
+			if (ranking[i] > ranking[largest])
+				largest = i;
+		}
+		reader.close();
 	}
-	
 }
