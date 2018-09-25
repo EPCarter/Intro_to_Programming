@@ -14,17 +14,11 @@ Summary: (Count vowels and consonants) Assume letters
           character to simplify the conditions of your 
           if statement
 */
-import java.util.Scanner;
+import java.util.*;
 
 class fiveFourtynine {
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          import java.util.*;
-
-public class Test3 {
 	public static void main(String[] args) {
-
-		Scanner reader = new Scanner(System.in);
+		Scanner reader = new Scanner(System.in);        
 		System.out.print("Enter a string: ");
 		String input = reader.next();
 
@@ -42,7 +36,7 @@ public class Test3 {
 		String oPattern = "(?i)o";
 		String uPattern = "(?i)u";
 		String yPattern = "(?i)y";
-		String notPattern = "(?i)^aeiou";
+		String notPattern = "(?i)^[aeiou]";
 
 		if (input.matches(aPattern)) {
 			countA++;
