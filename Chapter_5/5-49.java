@@ -1,19 +1,20 @@
-/*
-Author: Erik Carter
-Email: Carter.Eri7200@stu.stech.edu
-Course: CSCI 1105 - Introduction to Programming
-Assignment: 5-49
-Date: .  2018
-Summary: (Count vowels and consonants) Assume letters 
-          A, E, I, O, and U as the vowels. Write a 
-          program that prompts the user to enter a 
-          string and displays the number of vowels 
-          and consonants in the string.
 
-          Hint: Use the method "toUpperCase()" on your 
-          character to simplify the conditions of your 
-          if statement
-*/
+		/*
+		Author: Erik Carter
+		Email: Carter.Eri7200@stu.stech.edu
+		Course: CSCI 1105 - Introduction to Programming
+		Assignment: 5-49
+		Date: .  2018
+		Summary: (Count vowels and consonants) Assume letters 
+		          A, E, I, O, and U as the vowels. Write a 
+		          program that prompts the user to enter a 
+		          string and displays the number of vowels 
+		          and consonants in the string.
+
+		          Hint: Use the method "toUpperCase()" on your 
+		          character to simplify the conditions of your 
+		          if statement
+		*/
 import java.util.*;
 
 class fiveFourtynine {
@@ -40,7 +41,7 @@ class fiveFourtynine {
 
 		if (input.matches(aPattern)) {
 			countA++;
-		}
+			}
 
 		if (input.matches(ePattern)) {
 			countE++;
@@ -48,11 +49,9 @@ class fiveFourtynine {
 		if (input.matches(iPattern)) {
 			countI++;
 		}
-
 		if (input.matches(oPattern)) {
 			countO++;
 		}
-
 		if (input.matches(uPattern)) {
 			countU++;
 		}
@@ -65,29 +64,25 @@ class fiveFourtynine {
 		} else {
 			System.out.println("Error 01");
 		}
-
+		
 		int largest = 0;
 
 		int[] ranking = { countA, countE, countI, countO, countU, countY, countNot };
-
 		for (int i = 1; i < ranking.length; i++) {
 			if (ranking[i] > ranking[largest])
 				largest = i;
-		}
-
-		if (largest == 0) {
-			largest = 0;
-		}
-
-		else {
-			largest = largest + 1;
-		}
-
-		if (largest == 0) {
-			System.out.println("Error 02");
+			}
+			if (largest == 0) {
+				largest = 0;
+			}
+			else {
+				largest = largest + 1;
+			}
+			if (largest == 0) {
+				System.out.println("Error 02");
+			}
 		}
 	}
-}
 
-          }
+	}
 }
