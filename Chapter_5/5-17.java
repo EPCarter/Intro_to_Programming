@@ -1,6 +1,4 @@
-
 import java.util.*;
-
 public class Test {
 	public static void main(String[] args) {
 		System.out.print("Enter the number of lines: ");
@@ -8,7 +6,7 @@ public class Test {
 		int lines = reader.nextInt();
 		reader.close(); // 10, 12, 13 break
 		int printedRow = 1;
-		while (printedRow <= lines && printedRow <= 50 && printedRow >= 1) {
+		while (printedRow <= lines && printedRow <= 150) {
 			int spaces = 1;
 			String interNumberSpace = " ";
 			String extraNumberSpace = " ";
@@ -28,10 +26,6 @@ public class Test {
 			while (count <= printedRow) {
 				System.out.print(count + interNumberSpace);
 				count++;
-			}
-			while (spaces > 1) {
-				System.out.print(interNumberSpace);
-				spaces--;
 			}
 			printedRow++;
 			System.out.println();
