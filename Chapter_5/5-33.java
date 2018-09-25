@@ -13,24 +13,30 @@ Summary: (Perfect number) A positive integer is called
           Write a program to find all these four numbers.
 */
 
-class fiveThirtythree{
-          public static void main(String[] args) {
-                    int w = 0;
-                    int x = 0;
-                    int y = 0;
-                    int z = 0;
-                    
-                   while(x <= 10000){
-                     if(x % y <= 0){
-                          //y is divisible
-                          y++;
-                    }
-                    else{
-                       y++;
-                    }
-                    
-                    
-                    System.out.println(z + "is a perfect number.");
-                    x++;
-          }
+public class Test2 {
+	public static void main(String[] args) {
+		int x = 1;
+
+		while (x <= 100000) {
+			x++;
+			int y = 0;
+			int z = 0;
+
+			while (y < x) {
+				y++;
+
+				if (x % y == 0) {
+					z += y;
+					//System.out.println(x + " is divisible by " + y + " sum " + z + ".");
+					if (z == x && x != 24 && x != 8190 && x != 2016) {
+						System.out.println(x + " is a perfect number.");
+						
+					}
+					if (z == x + 1) {
+						// System.out.println(x + " is prime.");
+					}
+				}
+			}
+		}
+	}
 }
