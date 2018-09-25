@@ -4,9 +4,8 @@ public class Test {
 		System.out.print("Enter the number of lines: ");
 		Scanner reader = new Scanner(System.in);
 		int lines = reader.nextInt();
-		reader.close(); // 10, 12, 13 break
 		int printedRow = 1;
-		while (printedRow <= lines && printedRow <= 150) {
+		while (printedRow <= lines) {
 			int spaces = 1;
 			String interNumberSpace = " ";
 			String extraNumberSpace = " ";
