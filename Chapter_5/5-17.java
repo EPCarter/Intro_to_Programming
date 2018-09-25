@@ -1,5 +1,15 @@
+
+/*
+Author: Erik Carter
+Email: Carter.Eri7200@stu.stech.edu
+Course: CSCI 1105 - Introduction to Programming
+Assignment: 5-17
+Date: Sept. 25,  2018
+Summary: (Display pyramid) Write a program that prompts the user to enter an integer from 1 to 15 and displays a pyramid, as shown in the following sample run.
+*/
+
 import java.util.*;
-public class Test {
+public class FiveSeventeen {
 	public static void main(String[] args) {
 		System.out.print("Enter the number of lines: ");
 		Scanner reader = new Scanner(System.in);
@@ -25,9 +35,9 @@ public class Test {
 			while (count <= printedRow) {
 				System.out.print(count + interNumberSpace);
 				count++;
+				}
+				printedRow++;
+				System.out.println();
 			}
-			printedRow++;
-			System.out.println();
-		}
 	}
 }
