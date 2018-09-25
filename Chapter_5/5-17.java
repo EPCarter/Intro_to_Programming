@@ -8,7 +8,7 @@ public class Test {
 		int lines = reader.nextInt();
 		reader.close(); // 10, 12, 13 break
 		int printedRow = 1;
-		while (printedRow <= lines && printedRow <= 150 && printedRow >= 1) {
+		while (printedRow <= lines && printedRow <= 50 && printedRow >= 1) {
 			int spaces = 1;
 			String interNumberSpace = " ";
 			String extraNumberSpace = " ";
