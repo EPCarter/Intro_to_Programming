@@ -1,0 +1,5 @@
+Weekly
+sudo apt-get upgrade
+sudo apt-get update
+pihole -up
+sudo reboot
