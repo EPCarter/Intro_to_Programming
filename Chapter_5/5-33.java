@@ -21,7 +21,7 @@ public class FiveThirteeThree {
 			x++;
 			int y = 0;
 			int z = 0;
-			boolean done = false;
+			
 			while (y <= x) {
 				y++;
 
