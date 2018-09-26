@@ -11,25 +11,29 @@ Summary: (Count vowels and consonants) Assume letters A, E, I, O, and U as the v
 import java.util.regex.*;
 import java.util.*;
 
-public class Space1 {
+public class Space {
 
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		System.out.print("Enter a string: ");
-		String input = reader.next();
+		String input = reader.nextLine();
+		System.out.println("The String is:" + input);
 		reader.close();
 
-		String aPattern = "((.)?(A+|a+)+(.)?)+";
-		String ePattern = "((.)?(E+|e+)+(.)?)+";
-		String iPattern = "((.)?(I+|i+)+(.)?)+";
-		String oPattern = "((.)?(o+|O+)+(.)?)+";
-		String uPattern = "((.)?(u+|U+)+(.)?)?";
+		String aPattern = "(()?(A+|a+)+()?)+";
+		String ePattern = "(()?(E+|e+)+()?)+";
+		String iPattern = "(()?(I+|i+)+()?)+";
+		String oPattern = "(()?(O+|o+)+()?)+";
+		String uPattern = "(()?(U+|u+)+()?)+";
+		String yPattern = "(()?(Y+|y+)+()?)+";
 
+		regexChecker(yPattern, input);
 		regexChecker(aPattern, input);
 		regexChecker(ePattern, input);
 		regexChecker(iPattern, input);
 		regexChecker(oPattern, input);
 		regexChecker(uPattern, input);
+
 		System.out.print(" are vowels.");
 	}
 
@@ -37,7 +41,8 @@ public class Space1 {
 		Pattern checkRegex = Pattern.compile(theRegex);
 		Matcher regexMatcher = checkRegex.matcher(str2Check);
 		if (regexMatcher.find()) {
-			System.out.print(" " + regexMatcher.group().trim() );
+			System.out.println(" " + regexMatcher.group().trim());
 		}
+
 	}
 }
