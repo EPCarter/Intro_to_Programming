@@ -17,7 +17,9 @@ Summary: (Display matrix of 0s and 1s) Write a method that displays an
 import java.util.Scanner;
 
 class sixSeventeen {
+          
           public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
+          public static void printMatrix(int n)
+          Scanner reader = new Scanner(System.in);         
           }
 }
