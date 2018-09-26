@@ -1,27 +1,30 @@
 
-		/*
-		Author: Erik Carter
-		Email: Carter.Eri7200@stu.stech.edu
-		Course: CSCI 1105 - Introduction to Programming
-		Assignment: 5-49
-		Date: .  2018
-		Summary: (Count vowels and consonants) Assume letters 
-		          A, E, I, O, and U as the vowels. Write a 
-		          program that prompts the user to enter a 
-		          string and displays the number of vowels 
-		          and consonants in the string.
+/*
+Author: Erik Carter
+Email: Carter.Eri7200@stu.stech.edu
+Course: CSCI 1105 - Introduction to Programming
+Assignment: 5-49
+Date: .  2018
+Summary: (Count vowels and consonants) Assume letters 
+          A, E, I, O, and U as the vowels. Write a 
+          program that prompts the user to enter a 
+          string and displays the number of vowels 
+          and consonants in the string.
 
-		          Hint: Use the method "toUpperCase()" on your 
-		          character to simplify the conditions of your 
-		          if statement
-		*/
+          Hint: Use the method "toUpperCase()" on your 
+          character to simplify the conditions of your 
+          if statement
+*/
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-class fiveFourtynine {
+class Space {
 	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);        
+		Scanner reader = new Scanner(System.in);
 		System.out.print("Enter a string: ");
 		String input = reader.next();
+		reader.close();
 
 		int countA = 0;
 		int countE = 0;
@@ -31,58 +34,31 @@ class fiveFourtynine {
 		int countY = 0;
 		int countNot = 0;
 
-		String aPattern = "(?i)[a]+";
-		String ePattern = "(?i)[e]+";
-		String iPattern = "(?i)i";
-		String oPattern = "(?i)o";
-		String uPattern = "(?i)u";
-		String yPattern = "(?i)y";
-		String notPattern = "(?i)^[aeiou]";
+		String aPattern = ".?(A|a).?";
+		String ePattern = "(E|e)";
+		String iPattern = "(I|i)";
+		String oPattern = "(O|o)";
+		String uPattern = "(U|u)";
+		String yPattern = "(Y|y)";
+		String notPattern = "^[AaEeIiOoUu]";
 
-		if (input.matches(aPattern)) {
-			countA++;
-			}
+		regexChecker(aPattern, input);
+		regexChecker(ePattern, input);
+		regexChecker(iPattern, input);
+		regexChecker(oPattern, input);
+		regexChecker(uPattern, input);
+		regexChecker(yPattern, input);
+		regexChecker(notPattern, input);
 
-		if (input.matches(ePattern)) {
-			countE++;
-		}
-		if (input.matches(iPattern)) {
-			countI++;
-		}
-		if (input.matches(oPattern)) {
-			countO++;
-		}
-		if (input.matches(uPattern)) {
-			countU++;
-		}
-
-		if (input.matches(yPattern)) {
-			countY++;
-		}
-		if (input.matches(notPattern)) {
-			countNot++;
-		} else {
-			System.out.println("Error 01");
-		}
-		
-		int largest = 0;
-
-		int[] ranking = { countA, countE, countI, countO, countU, countY, countNot };
-		for (int i = 1; i < ranking.length; i++) {
-			if (ranking[i] > ranking[largest])
-				largest = i;
-			}
-			if (largest == 0) {
-				largest = 0;
-			}
-			else {
-				largest = largest + 1;
-			}
-			if (largest == 0) {
-				System.out.println("Error 02");
-			}
-		}
 	}
 
+	public static void regexChecker(String theRegex, String str2Check) {
+		Pattern checkRegex = Pattern.compile(theRegex);
+		Matcher regexMatcher = checkRegex.matcher(str2Check);
+		while (regexMatcher.find()) {
+			if (regexMatcher.group().length() != 0) {
+				System.out.println(regexMatcher.group().trim());
+			}
+		}
 	}
 }
