@@ -1,3 +1,4 @@
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -17,11 +18,28 @@ Summary: (Palindrome integer) Write the methods with the following headers:
 
           (Hint: The isPalindrome method should call the reverse method.)
 */
-
 import java.util.Scanner;
 
-class sixThree {
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          }
+class Spaces2 {
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		String input = reader.nextLine();
+		reader.close();
+		char[] inputChars = input.toCharArray();
+		char[] reverseChars = new char[inputChars.length];
+		String reverseString = reverseChars.toString();
+
+		for (int i = 0; i < inputChars.length; i++) {
+			reverseChars[i] = inputChars[inputChars.length - i];
+		}
+
+		if (input == reverseString) {
+			System.out.println(input + " is a palindrome.");
+		}
+
+		else {
+			System.out.println(input + " is not a palindrome.");
+		}
+	}
 }
