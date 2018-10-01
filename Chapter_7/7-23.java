@@ -1,3 +1,4 @@
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -26,11 +27,21 @@ Summary: (Game: locker puzzle) A school has 100 lockers and 100 students.
           and close the lockers. Finally, you can use a for loop to display which
           lockers are still open.
 */
+class SevenTwentyThree {
+	public static void main(String[] args) {
+		boolean[] lockerState = new boolean[101];
 
-import java.util.Scanner;
+		for (int student = 1; student <= 100; student++) {
+			for (int studentEffect = student; studentEffect <= 100; studentEffect += student) {
+				lockerState[studentEffect] = !lockerState[studentEffect];
+			}
+		}
 
-class sevenTwentythree {
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          }
+		for (int i = 1; i <= 100; i++) {
+			// System.out.println("Locker " + i + ": " + lockerState[i]);
+			if (lockerState[i] == true) {
+				System.out.print(i + " ");
+			}
+		}
+	}
 }
