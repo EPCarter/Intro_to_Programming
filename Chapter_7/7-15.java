@@ -3,7 +3,7 @@ Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: 7-15
-Date: .  2018
+Date: Oct. 1,  2018
 Summary: (Eliminate duplicates) Write a method that returns a 
           new array by eliminating the duplicate values in the 
           array using the following method header:
@@ -25,32 +25,24 @@ import java.util.*;
 class SevenFifteen {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-		int[] numberArray = new int[11];
-		int[] numberArrayPrint = new int[numberArray.length];
-		int number = 1;
-		while (number <= 10) {
-			System.out.print("Enter number " + number + ": ");
-			int input = reader.nextInt();
-			numberArray[number] = input;
-			number++;
-		}
-		for (int i = 1; i <= 10; i++) {
-			for (int j = 1; j <= 10; j++) {
-				if (numberArray[i] == numberArray[j] && i != j) {
-					numberArrayPrint[j] = 0;
-				} 
-				else {
-					numberArrayPrint[i] = numberArray[i];
+		System.out.print("Enter a string: ");
+		String input = reader.nextLine();
+		reader.close();
+
+		String inputCleaned = input.replaceAll("\\s+", "");
+		char[] list = inputCleaned.toCharArray();
+		eliminateDuplicates(list);
+		System.out.println(list);
+	}
+
+	public static char[] eliminateDuplicates(char[] list) {
+		for (int primary = 0; primary < list.length; primary++) {
+			for (int secondary = 0; secondary < list.length; secondary++) {
+				if (list[primary] == list[secondary] && primary != secondary) {
+					list[secondary] = ' ';
 				}
 			}
 		}
-		for (int i = 1; i < numberArrayPrint.length; i++) {
-			if (numberArrayPrint[i] == 0) {
-			} else {
-				System.out.print(numberArrayPrint[i] + " ");
-			}
-		}
-	}
-	public static int[] eliminateDuplicates(int[] list){
+		return list;
 	}
 }
