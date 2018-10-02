@@ -1,3 +1,4 @@
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -18,7 +19,19 @@ Summary: (Find the smallest element) Write a method that finds
 import java.util.Scanner;
 
 class sevenNine {
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          }
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+
+		for (int i = 0; i < 10; i++) {
+			System.out.print("Enter a double: ");
+			double[] array = new double[10];
+			array[i] = reader.nextDouble();
+			reader.close();
+			System.out.println(array);
+		}
+	}
+
+	public static double min(double[] array) {
+
+	}
 }

@@ -11,29 +11,26 @@ Summary: (Find numbers divisible by 5 or 6, but not both)
 					exactly one space.
 */
 
-public class fiveEleven{
+public class fiveEleven {
 	public static void main(String[] args) {
-	
+
 		int x = 100;
 		int y = 2;
-		
-		while(x <= 200 && x >= 100 ){	
-			if(x % 5 == 0 && x % 6 == 0){
+
+		while (x <= 200 && x >= 100) {
+			if (x % 5 == 0 && x % 6 == 0) {
 				x++;
-			}
-			else if(x % 5 == 0 || x % 6 == 0){		
+			} else if (x % 5 == 0 || x % 6 == 0) {
 				System.out.print(x + " ");
 				x++;
-				
-				if(y <= 10){
+
+				if (y <= 10) {
 					y++;
-				}
-				else{
+				} else {
 					System.out.println();
 					y = 2;
 				}
-			}
-			else{
+			} else {
 				x++;
 			}
 		}
