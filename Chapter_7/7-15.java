@@ -22,7 +22,7 @@ Summary: (Eliminate duplicates) Write a method that returns a
 
 import java.util.*;
 
-class Spaces3 {
+class SevenFifteen {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		int[] numberArray = new int[11];
@@ -34,12 +34,12 @@ class Spaces3 {
 			numberArray[number] = input;
 			number++;
 		}
-		reader.close();
 		for (int i = 1; i <= 10; i++) {
 			for (int j = 1; j <= 10; j++) {
 				if (numberArray[i] == numberArray[j] && i != j) {
 					numberArrayPrint[j] = 0;
-				} else {
+				} 
+				else {
 					numberArrayPrint[i] = numberArray[i];
 				}
 			}
