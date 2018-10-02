@@ -10,7 +10,7 @@
 
 import java.util.*;
 
-public class Examples {
+public class Blank {
 	public static void main(String[] args) {
 
 		Scanner reader = new Scanner(System.in);

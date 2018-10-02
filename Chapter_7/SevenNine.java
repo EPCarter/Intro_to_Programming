@@ -1,3 +1,4 @@
+package Chapter_7;
 
 /*
 Author: Erik Carter
@@ -16,22 +17,22 @@ Summary: (Find the smallest element) Write a method that finds
           value, and displays the minimum value.
 */
 
-import java.util.Scanner;
+import java.util.*;
 
-class sevenNine {
+class SevenNine {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-
-		for (int i = 0; i < 10; i++) {
-			System.out.print("Enter a double: ");
-			double[] array = new double[10];
+		double[] array = new double[11];
+		for (int i = 1; i < 11; i++) {
+			System.out.print("Enter number " + i + ": ");
 			array[i] = reader.nextDouble();
-			reader.close();
-			System.out.println(array);
 		}
+		reader.close();
+		System.out.println(min(array));
 	}
 
 	public static double min(double[] array) {
-
+		Arrays.sort(array);
+		return array[0];
 	}
 }
