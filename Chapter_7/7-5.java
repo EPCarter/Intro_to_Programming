@@ -23,18 +23,19 @@ class SevenFive {
 		int[] numberArray = new int[11];
 		int[] numberArrayPrint = new int[numberArray.length];
 		int number = 1;
+		int count = 0;
 		while (number <= 10) {
 			System.out.print("Enter number " + number + ": ");
 			int input = reader.nextInt();
 			numberArray[number] = input;
 			number++;
 		}
+		reader.close();
 		for (int i = 1; i <= 10; i++) {
 			for (int j = 1; j <= 10; j++) {
 				if (numberArray[i] == numberArray[j] && i != j) {
 					numberArrayPrint[j] = 0;
-				} 
-				else {
+				} else {
 					numberArrayPrint[i] = numberArray[i];
 				}
 			}
@@ -43,7 +44,10 @@ class SevenFive {
 			if (numberArrayPrint[i] == 0) {
 			} else {
 				System.out.print(numberArrayPrint[i] + " ");
+				count++;
 			}
 		}
+		System.out.println();
+		System.out.println(count + " distinct numbers.");
 	}
 }
