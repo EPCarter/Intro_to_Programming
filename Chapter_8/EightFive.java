@@ -5,7 +5,7 @@ Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: 8-5
-Date: .  2018
+Date: Oct. 2,  2018
 Summary: (Algebra: add two matrices) Write a method to add two matrices. 
           The header of the method is as follows:
           
@@ -37,7 +37,7 @@ class eightFive {
 			k = reader.nextInt();
 			System.out.print("First box height: ");
 			l = reader.nextInt();
-			System.out.print("Second box height: ");
+			System.out.print("Second box width: ");
 			m = reader.nextInt();
 			System.out.print("Second box height: ");
 			n = reader.nextInt();

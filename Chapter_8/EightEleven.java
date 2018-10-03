@@ -4,7 +4,7 @@ Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: 8-11
-Date: .  2018
+Date: Oct. 2,  2018
 Summary: (Game: nine heads and tails) Nine coins are placed in a 3-by-3 
           matrix with some face up and some face down. You can represent 
           the state of the coins using a 3-by-3 matrix with values 0 (heads)
