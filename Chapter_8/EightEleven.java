@@ -1,3 +1,4 @@
+package Chapter_8;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -29,8 +30,33 @@ Summary: (Game: nine heads and tails) Nine coins are placed in a 3-by-3
 
 import java.util.Scanner;
 
-class eightEleven{
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          }
+class eightEleven {
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Enter number: ");
+		int input = reader.nextInt();
+		reader.close();
+
+		String input2 = Integer.toBinaryString(input);
+		char[] inputArray = input2.toCharArray();
+		char[] inputArray2 = new char[9];
+		int zeros = 9 - input2.length();
+
+		for (int j = 0; j < zeros; j++) {
+			inputArray2[j] = 'H';
+		}
+
+		for (int j = 0; j < input2.length(); j++) {
+			if (inputArray[j] == '0') {
+				inputArray2[j + zeros] = 'H';
+			} else if (inputArray[j] == '1') {
+				inputArray2[j + zeros] = 'T';
+			} else {
+				inputArray2[j + zeros] = 'U';
+			}
+		}
+		System.out.println(inputArray2[0] + " " + inputArray2[1] + " " + inputArray2[2]);
+		System.out.println(inputArray2[3] + " " + inputArray2[4] + " " + inputArray2[5]);
+		System.out.println(inputArray2[6] + " " + inputArray2[7] + " " + inputArray2[8]);
+	}
 }
