@@ -1,3 +1,4 @@
+package Chapter_6;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -18,15 +19,15 @@ Summary: (Convert milliseconds to hours, minutes, and seconds)
 
 import java.util.Scanner;
 
-class Spaces2{
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);  
-           long millis = reader.nextLong();
-          }
-          
-          public static String convertMillis(long millis) {
-        	  String convert = millis.toString(millis);
-        	  System.out.println(convert);
-        	  return convert;
-          }
+class SixTwentyFive {
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		long millis = reader.nextLong();
+	}
+
+	public static String convertMillis(long millis) {
+		String convert = millis.toString(millis);
+		System.out.println(convert);
+		return convert;
+	}
 }

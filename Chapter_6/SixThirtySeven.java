@@ -1,3 +1,4 @@
+package Chapter_6;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -23,8 +24,8 @@ Summary: (Format an integer) Write a method with the following
 
 import java.util.Scanner;
 
-class sixThirtyseven {
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          }
+class SixThirtyseven {
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+	}
 }

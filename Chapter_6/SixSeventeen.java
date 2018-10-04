@@ -1,3 +1,4 @@
+package Chapter_6;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -16,9 +17,9 @@ Summary: (Display matrix of 0s and 1s) Write a method that displays an
 
 import java.util.Scanner;
 
-class sixSeventeen {
-          
-          public static void main(String[] args) {
+class SixSeventeen {
+
+	public static void main(String[] args) {
           public static void printMatrix(int n)
           Scanner reader = new Scanner(System.in);         
           }

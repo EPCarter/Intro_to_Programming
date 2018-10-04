@@ -1,3 +1,4 @@
+package Chapter_6;
 
 /*
 Author: Erik Carter
@@ -20,26 +21,42 @@ Summary: (Palindrome integer) Write the methods with the following headers:
 */
 import java.util.Scanner;
 
-class Spaces2 {
+class SixThree {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-		System.out.println("Enter a number: ");
-		String input = reader.nextLine();
+		System.out.println("Enter something: ");
+		String input = reader.nextLine().toLowerCase();
 		reader.close();
-		char[] inputChars = input.toCharArray();
-		char[] reverseChars = new char[inputChars.length];
-		String reverseString = reverseChars.toString();
+		int length = input.length();
+		String reverse = reverse(input);
+		if (isPalindrome(length, input, reverse)) {
+			System.out.println(input + " is a Palindrome.");
+		} else {
 
-		for (int i = 0; i < inputChars.length; i++) {
-			reverseChars[i] = inputChars[inputChars.length - i];
+			System.out.println(input + " (" + reverse + ")" + " is NOT a Palindrome.");
 		}
+	}
 
-		if (input == reverseString) {
-			System.out.println(input + " is a palindrome.");
+	public static String reverse(String input) {
+		String reverse = "";
+		for (int i = input.length() - 1; i >= 0; i--) {
+			reverse = reverse + input.charAt(i);
 		}
+		return reverse;
+	}
 
-		else {
-			System.out.println(input + " is not a palindrome.");
+	public static boolean isPalindrome(int length, String input, String reverse) {
+		int count = 0;
+		boolean isOrNot = false;
+		for (int j = 0; j < length; j++) {
+			if (reverse.charAt(j) == input.charAt(j)) {
+				count++;
+			}
+		}
+		if (count == length)
+			isOrNot = true;
+		{
+			return isOrNot;
 		}
 	}
 }
