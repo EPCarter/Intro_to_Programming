@@ -1,10 +1,11 @@
-package Chapter_6;
+//package Chapter_6;
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: 6-37
-Date: .  2018
+Date: Oct. 4 2018
 Summary: (Format an integer) Write a method with the following 
           header to format the inte- ger with the specified width.
           
@@ -21,11 +22,46 @@ Summary: (Format an integer) Write a method with the following
           and its width and displays a string returned by invoking 
           format(number, width).
 */
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 class SixThirtyseven {
 	public static void main(String[] args) {
+
+		for (int i = 0; i < 5; i++) {
+			input();
+		}
+	}
+
+	public static void input() {
 		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter a number:");
+		int number = reader.nextInt();
+		System.out.println("Enter the width: ");
+		int width = reader.nextInt();
+		System.out.println(format(number, width));
+	}
+
+	public static String cleaner(String format) {
+		String cleanedFormat = format;
+		String cleanPattern = "(\\[+|\\]+|,+|\\s+)";
+		cleanedFormat = cleanedFormat.replaceAll(cleanPattern, "");
+		return cleanedFormat;
+	}
+
+	public static String format(int number, int width) {
+		String format = "";
+		String cleanedFormat = "";
+		for (int i = 0; i < width; i++) {
+			ArrayList<Integer> formatList = new ArrayList<Integer>(width);
+			for (int j = 0; j < width - String.valueOf(number).length(); j++) {
+				formatList.add(0);
+			}
+			formatList.add(number);
+			format = formatList.toString();
+			cleanedFormat = cleaner(format);
+		}
+		return cleanedFormat;
 	}
 }

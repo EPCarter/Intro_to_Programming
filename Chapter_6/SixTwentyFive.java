@@ -1,4 +1,4 @@
-package Chapter_6;
+//package Chapter_6;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -21,13 +21,32 @@ import java.util.Scanner;
 
 class SixTwentyFive {
 	public static void main(String[] args) {
+		for (int i = 0; i < 5; i++) {
+			input();
+		}
+	}
+
+	public static void input() {
 		Scanner reader = new Scanner(System.in);
+		System.out.print("Enter milliseconds: ");
 		long millis = reader.nextLong();
+		System.out.println(convertMillis(millis));
 	}
 
 	public static String convertMillis(long millis) {
-		String convert = millis.toString(millis);
-		System.out.println(convert);
+		long millisInHr = 3600000;
+		long millisInMin = 60000;
+		long millisInSec = 1000;
+
+		long hrInMillis = millis / millisInHr;
+		long minInMillis = (millis - (hrInMillis * millisInHr)) / millisInMin;
+		long secInMillis = (millis - (hrInMillis * millisInHr) - (minInMillis * millisInMin)) / millisInSec;
+
+		int hr = (int) (hrInMillis);
+		int min = (int) (minInMillis);
+		int sec = (int) (secInMillis);
+
+		String convert = hr + ":" + min + ":" + sec;
 		return convert;
 	}
 }
