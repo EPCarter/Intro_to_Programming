@@ -1,3 +1,4 @@
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -36,10 +37,222 @@ Summary: Think of a project that uses multiple items you have learned
            and submit the link here.
 */
 
-import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+@SuppressWarnings("resource")
 
 class finalProject {
-          public static void main(String[] args) {
-           Scanner reader = new Scanner(System.in);         
-          }
+	public static void main(String[] args) {
+		menu();
+	}
+
+	public static void menu() { // rewrite to take menu options for submenu
+		System.out.println("-------------------------------------");
+		System.out.println("What would you like to do?");
+		System.out.println();
+		int menuItems = 7;
+		int a = 0;
+		String b = "";
+		for (int j = 0; j < menuItems; j++) {
+			switch (j) {
+			case 0:
+				b = "Exit";
+				break;
+			case 1:
+				b = "Menu";
+				break;
+			case 2:
+				b = "Import Data";
+				break;
+			case 3:
+				b = "Fill in Data Gaps";
+				break;
+			case 4:
+				b = "Location Lookup";
+				break;
+			case 5:
+				b = "Estimates";
+				break;
+			case 6:
+				b = "Add Data";
+				break;
+			case 7:
+				b = "Upload";
+				break;
+			default:
+				b = "Menu";
+				break;
+			}
+			System.out.println(a + ": " + b);
+			a++;
+		}
+
+		System.out.println("-------------------------------------");
+		Scanner reader = new Scanner(System.in);
+		int inputCleaned = Integer.parseInt(reader.nextLine());
+
+		switch (inputCleaned) {
+		case 0:
+			System.exit(0);
+			break;
+		case 1:
+			menu();
+			break;
+		case 2:
+			dataImport();
+			menu();
+			break;
+		case 3:
+			gaps();
+			menu();
+			break;
+		case 4:
+			query();
+			menu();
+			break;
+		case 5:
+			estimates();
+			menu();
+			break;
+		case 6:
+			addData();
+			menu();
+			break;
+		case 7:
+			upload();
+			menu();
+			break;
+		default:
+			break;
+		}
+	}
+
+	public static void dataImport() {
+		//download file  https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
+		String fileName = "/Users/Administrator/Git/Intro_to_Programming/Final_Project/UncleanedData.csv";
+		File file = new File(fileName);
+		List<List<String>> lines = new ArrayList<>();
+		Scanner inputStream;
+		try {
+			inputStream = new Scanner(file);
+			while (inputStream.hasNext()) {
+				String line = inputStream.nextLine();
+				String[] values = line.split(",");
+				lines.add(Arrays.asList(values));
+			}
+			inputStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		arrayList(lines);
+		dataCleanup(lines);
+	}
+
+	public static void dataCleanup(List<List<String>> lines) {
+		// find things and put copy in right place
+		// query into array 0, others into 1+
+		// Read line (all columns)
+		// find street address
+		// find city
+		// find state
+		// find zip
+		// find zip+4
+		// find county
+		// find north/south
+		// find what
+		// find how deep
+		// find total cost
+		// find realtor
+		// find phone number
+		// find everything else
+	}
+
+	public static void gaps() {
+		// google search return string
+		// return results that match (or votes for return match)
+	}
+
+	public static List<String> inputCleanup(String input) {
+		// format given string to array[0] boxes
+		List<String> inputData = new ArrayList<>();
+		// input to array
+		return inputData;
+	}
+
+	public static void query() {
+		// check arary[0] against all other boxes
+		// return matches
+		// math on matches
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Location lookup: ");
+		String input = reader.nextLine();
+		inputCleanup(input);
+		lookup(input);
+		printOut(input);
+	}
+
+	public static void lookup(String input) {
+		// clean input
+		// compare
+		// averages for area
+	}
+
+	public static void arrayList(List<List<String>> lines) {
+		int lineNo = 1;
+		for (List<String> line : lines) {
+			int columnNo = 1;
+			for (String value : line) {
+				System.out.println("Line " + lineNo + " Column " + columnNo + ": " + value);
+				columnNo++;
+			}
+			lineNo++;
+		}
+	}
+
+	public static void addData() {
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Data to add: ");
+		String input = reader.nextLine();
+		inputCleanup(input);
+		List<String> inputData = new ArrayList<>();
+		// dataCleanup(inputData);
+		// append data to
+		// "/Users/Administrator/Git/Intro_to_Programming/Final_Project/UncleanedData.csv";
+	}
+
+	public static void estimates() {
+		// data = ;
+		// addData(data);
+	}
+
+	public static void upload() {
+		// https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
+	}
+
+	public static void printOut(String input) {
+		String address = "";
+		String city = "";
+		String state = "";
+		String county = "";
+		String zip = "";
+		String plusFour = "";
+		String northSouth = "";
+		String type = "";
+		String depth = "";
+		String cost = "";
+		String avgCost = "";
+		String avgDepth = "";
+		String realtor = "";
+		String realtorAddress = "";
+		String phoneNumber = "";
+		String email = "";
+
+		System.out.println(
+				address + ", " + city + ", " + state + ", " + county + ", " + zip + "-" + plusFour + ", " + northSouth);
+		System.out
+				.println(type + ": " + depth + "ft (" + avgDepth + "ft avg.) $" + cost + " (*" + avgCost + " avg cost");
+		System.out.println(realtor + " " + realtorAddress + " " + phoneNumber + " " + email);
+	}
 }
