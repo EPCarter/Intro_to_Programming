@@ -1,3 +1,4 @@
+package Chapter_5;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -13,7 +14,7 @@ Summary: (Perfect number) A positive integer is called
           Write a program to find all these four numbers.
 */
 
-public class FiveThirteeThree {
+public class FiveThirtyThree {
 	public static void main(String[] args) {
 		int x = 1;
 
@@ -21,7 +22,7 @@ public class FiveThirteeThree {
 			x++;
 			int y = 0;
 			int z = 0;
-			
+
 			while (y <= x) {
 				y++;
 

@@ -22,6 +22,7 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+@SuppressWarnings("resource")
 
 public class EightThirtySeven {
 	public static void main(String[] args) {

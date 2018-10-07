@@ -1,3 +1,5 @@
+package Chapter_2;
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -25,32 +27,28 @@ Summary: (Financial application: compound value) Suppose you save $100 each mont
 					use a loop to simplify the code and display the account value for any month.)
 */
 
-
-					
-
-
 import java.util.Scanner;
-
-class twoThirteen {
+@SuppressWarnings("resource")
+class TwoThirteen {
 	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);		
-		
-		System.out.print("Enter monthly saved: ");		
-		float monthlyMoney = reader.nextFloat();	
-		float monthlyInterestRate = 0.05f/12f;
+		Scanner reader = new Scanner(System.in);
+
+		System.out.print("Enter monthly saved: ");
+		float monthlyMoney = reader.nextFloat();
+		float monthlyInterestRate = 0.05f / 12f;
 		float accountValue = 0;
 		float interest = 0;
 		int month = 0;
-	
-	while(month < 7){
-		accountValue += monthlyMoney;
-		interest = monthlyInterestRate * accountValue;
-		accountValue += interest;
-		month++;
-		//System.out.println(accountValue);
-		}				
-		
-	System.out.println("Account Value after 6mo: $" + accountValue);	
+
+		while (month < 7) {
+			accountValue += monthlyMoney;
+			interest = monthlyInterestRate * accountValue;
+			accountValue += interest;
+			month++;
+			// System.out.println(accountValue);
+		}
+
+		System.out.println("Account Value after 6mo: $" + accountValue);
 	}
-	
+
 }

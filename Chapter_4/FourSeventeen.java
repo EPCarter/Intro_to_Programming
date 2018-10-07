@@ -1,4 +1,4 @@
-
+package Chapter_4;
 /*
 	Author: Erik Carter
 	Email: Carter.Eri7200@stu.stech.edu
@@ -10,6 +10,7 @@
 
 import java.util.*;
 
+@SuppressWarnings("resource")
 class FourSeventeen {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);

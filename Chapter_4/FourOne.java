@@ -1,3 +1,4 @@
+package Chapter_4;
 
 /*
 Author: Erik Carter
@@ -41,25 +42,21 @@ Summary: (Geometry: area of a pentagon) Write a program that
 */
 
 import java.util.Scanner;
-import java.math.*;
 
+@SuppressWarnings("resource")
 class fourOne {
-		public static void main(String[] args) {
-				Scanner reader = new Scanner(System.in);
-				 
-				System.out.print("Input number of sides: ");
-				double n = reader.nextDouble();
-				
-				System.out.print("Input Circumradius of Pentagon (center to corner): ");
-				double radius = reader.nextDouble();
-				
-				
-				double side = (radius * 2) * (Math.sin(Math.PI / n));
-				double area = (Math.pow(side, 2) * n) / (Math.tan(Math.PI/n) * 4) ;
-							
-				System.out.printf("The area is %.2f", area);  
-				System.out.printf(", and the side is %.2f", side);
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Input number of sides: ");
+		double n = reader.nextDouble();
 
-		}
+		System.out.print("Input Circumradius of Pentagon (center to corner): ");
+		double radius = reader.nextDouble();
+
+		double side = (radius * 2) * (Math.sin(Math.PI / n));
+		double area = (Math.pow(side, 2) * n) / (Math.tan(Math.PI / n) * 4);
+
+		System.out.printf("The area is %.2f", area);
+		System.out.printf(", and the side is %.2f", side);
+	}
 }
-

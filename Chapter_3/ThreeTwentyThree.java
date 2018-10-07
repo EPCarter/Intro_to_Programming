@@ -1,5 +1,6 @@
-/* 
- "//?" Precede my questions
+package Chapter_3;
+
+/*
  Author: Erik Carter
  Email: Carter.Eri7200@stu.stech.edu
  Course: CSCI 1105 - Introduction to Programming
@@ -21,42 +22,42 @@
 
 import java.util.Scanner; //? Can I import this anywhere so long as it's before it's actually called? (eg. line 23.5)
 
-public class threeTwoThree{	//? What are the principles in correct naming of classes?	
-  public static void main(String[] args) { //? What about here?		
+public class ThreeTwentyThree { // ? What are the principles in correct naming of classes?
+	public static void main(String[] args) { // ? What about here?
 		Scanner reader = new Scanner(System.in);
-		
+
 		System.out.print("Rectangle Width: ");
-		float w = reader.nextFloat()/2;
-		if(w % 1 <= 0){	
-			//int ww = w;
-		} //? Are my } spacings correct throughout?
-		
+		float w = reader.nextFloat() / 2;
+		if (w % 1 <= 0) {
+			// int ww = w;
+		} // ? Are my } spacings correct throughout?
+
 		System.out.print("Rectangle Height: ");
-		float h = reader.nextFloat()/2;
-		if(h % 1 <= 0){	
-			//int hh = h;
-		}	
-	
+		float h = reader.nextFloat() / 2;
+		if (h % 1 <= 0) {
+			// int hh = h;
+		}
+
 		System.out.print("Enter X Coordinate: ");
 		float x = reader.nextFloat();
-		if(x % 1 <= 0){	
-			//int xx = x;
+		if (x % 1 <= 0) {
+			// int xx = x;
 		}
-		
+
 		System.out.print("Enter Y Coordinate: ");
 		float y = reader.nextFloat();
-		if(y % 1 <= 0){	
-			//int yy = y;
-		}
-	
-		reader.close();		
-
-	if(-w <= x && x <= w && -h <= y && y <= h){
-		System.out.println("Coordinates (" + x + ", " + y + ") are Inside (+-" + w + ", +-" + h + ")");
+		if (y % 1 <= 0) {
+			// int yy = y;
 		}
 
-	else{
-		System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-"+ w + ", +-" + h + ")");
+		reader.close();
+
+		if (-w <= x && x <= w && -h <= y && y <= h) {
+			System.out.println("Coordinates (" + x + ", " + y + ") are Inside (+-" + w + ", +-" + h + ")");
+		}
+
+		else {
+			System.out.println("Coordinates (" + x + ", " + y + ") are Outside (+-" + w + ", +-" + h + ")");
 		}
 	}
 }

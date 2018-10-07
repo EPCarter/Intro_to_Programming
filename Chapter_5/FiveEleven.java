@@ -1,3 +1,5 @@
+package Chapter_5;
+
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -11,7 +13,7 @@ Summary: (Find numbers divisible by 5 or 6, but not both)
 					exactly one space.
 */
 
-public class fiveEleven {
+public class FiveEleven {
 	public static void main(String[] args) {
 
 		int x = 100;

@@ -1,3 +1,4 @@
+package Chapter_5;
 
 /*
 Author: Erik Carter
@@ -10,7 +11,7 @@ Summary: (Count vowels and consonants) Assume letters A, E, I, O, and U as the v
 */
 import java.util.*;
 
-public class Spaces {
+public class FiveFourtyNine {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		System.out.print("Enter a string: ");

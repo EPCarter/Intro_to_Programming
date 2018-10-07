@@ -1,3 +1,4 @@
+package Chapter_2;
 
 /*
 Author: Erik Carter
@@ -12,20 +13,21 @@ Summary: (Cost of driving) Write a program that prompts the user to enter
 
 import java.util.Scanner;
 
-class twoTwentythree {
+@SuppressWarnings("resource")
+class TwoTwentythree {
 	public static void main(String[] args) {
-					Scanner reader = new Scanner(System.in);
-					
-					System.out.print("Distance (mi): ");
-					float distance = reader.nextFloat(); 
-					
-					System.out.print("Efficiency (mi/gal): ");
-					float efficiency = reader.nextFloat(); 
-					
-					System.out.print("Price ($/gal): $");
-					float price = reader.nextFloat();
-					
-					float tripCost = distance * efficiency * price;
-					System.out.print("Trip Cost: $" + tripCost);				
+		Scanner reader = new Scanner(System.in);
+
+		System.out.print("Distance (mi): ");
+		float distance = reader.nextFloat();
+
+		System.out.print("Efficiency (mi/gal): ");
+		float efficiency = reader.nextFloat();
+
+		System.out.print("Price ($/gal): $");
+		float price = reader.nextFloat();
+
+		float tripCost = distance * efficiency * price;
+		System.out.print("Trip Cost: $" + tripCost);
 	}
 }

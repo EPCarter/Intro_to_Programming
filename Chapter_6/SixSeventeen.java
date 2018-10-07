@@ -1,4 +1,4 @@
-//package Chapter_6;
+package Chapter_6;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu

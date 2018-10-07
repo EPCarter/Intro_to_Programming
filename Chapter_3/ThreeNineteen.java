@@ -1,4 +1,4 @@
-
+package Chapter_3;
 
 /*
 Author: Erik Carter
@@ -15,27 +15,27 @@ Summary: (Compute the perimeter of a triangle) Write a program
 
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 class threeNineteen {
 	public static void main(String[] args) {
-					Scanner reader = new Scanner(System.in);
-					
-					System.out.print("Input Side A: ");
-					double sideA = reader.nextDouble();
-					
-					System.out.print("Input Side B: ");
-					double sideB = reader.nextDouble();
-					
-					System.out.print("Input Side C: ");
-					double sideC = reader.nextDouble();
-					
-					double perimeter;
-			
-					if(sideA + sideB > sideC){
-						System.out.println("Side C must be longer than Side A + Side B.");
-										}
-					else{
-					 perimeter = sideA + sideB + sideC;
-					 System.out.println("The Perimeter is: " + perimeter);
-					 }
+		Scanner reader = new Scanner(System.in);
+
+		System.out.print("Input Side A: ");
+		double sideA = reader.nextDouble();
+
+		System.out.print("Input Side B: ");
+		double sideB = reader.nextDouble();
+
+		System.out.print("Input Side C: ");
+		double sideC = reader.nextDouble();
+
+		double perimeter;
+
+		if (sideA + sideB > sideC) {
+			System.out.println("Side C must be longer than Side A + Side B.");
+		} else {
+			perimeter = sideA + sideB + sideC;
+			System.out.println("The Perimeter is: " + perimeter);
+		}
 	}
 }

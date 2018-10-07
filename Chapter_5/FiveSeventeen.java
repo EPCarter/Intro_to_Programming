@@ -1,4 +1,4 @@
-
+package Chapter_5;
 /*
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
@@ -9,6 +9,8 @@ Summary: (Display pyramid) Write a program that prompts the user to enter an int
 */
 
 import java.util.*;
+
+@SuppressWarnings("resource")
 public class FiveSeventeen {
 	public static void main(String[] args) {
 		System.out.print("Enter the number of lines: ");
@@ -35,9 +37,9 @@ public class FiveSeventeen {
 			while (count <= printedRow) {
 				System.out.print(count + interNumberSpace);
 				count++;
-				}
-				printedRow++;
-				System.out.println();
 			}
+			printedRow++;
+			System.out.println();
+		}
 	}
 }

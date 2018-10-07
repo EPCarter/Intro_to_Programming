@@ -1,3 +1,5 @@
+package Chapter_1;
+
 		/*
 		Author: Erik Carter
 		Email: Carter.Eri7200@stu.stech.edu
@@ -7,7 +9,7 @@
 		Summary: (Compute expressions) Write a program that displays the result of: [(9.5 * 4.5) - (2.5 * 3.0)] / [45.5 - 3.5]
 		*/
 
-public class oneFive{	
+public class OneFive{	
 	public static void main(String[] args) {				    
 		double answer = ((9.5 * 4.5) - (2.5 * 3.0)) / (45.5 - 3.5);
 		
