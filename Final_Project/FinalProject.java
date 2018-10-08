@@ -61,7 +61,7 @@ class finalProject {
 				b = "Exit";
 				break;
 			case 1:
-				b = "Menu";
+				b = "Main Menu";
 				break;
 			case 2:
 				b = "Import Data";
@@ -105,23 +105,23 @@ class finalProject {
 			menu();
 			break;
 		case 3:
-			gaps();
+			gaps(); //combine duplicates, okay overwrites, use given info to find unknowns
 			menu();
 			break;
 		case 4:
-			query();
+			query(); //lookup info meeting given criteria, or options for next best (eg. unknown address boots to nearby or zip, city, n/s, state...)
 			menu();
 			break;
 		case 5:
-			estimates();
+			estimates(); //input address, input type, input cost, input piles
 			menu();
 			break;
 		case 6:
-			addData();
+			addData(); //via estimates, append to file
 			menu();
 			break;
 		case 7:
-			upload();
+			upload(); //upload to google drive or edit google doc
 			menu();
 			break;
 		default:
@@ -168,6 +168,8 @@ class finalProject {
 		// find realtor
 		// find phone number
 		// find everything else
+		
+		//save as cleanedData
 	}
 
 	public static void gaps() {
@@ -229,31 +231,33 @@ class finalProject {
 	}
 
 	public static void upload() {
+		System.out.println("Uploads .cvs to Google Drive.");
 		// https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
 	}
 
 	public static void printOut(String input) {
-		String address = "";
-		String city = "";
+		String address = ""; // 0-5 numbers, space, then word, space, then maybe word (w/ | w/o punctuation),
+								// space (eg. 123 Fake St.)
 		String state = "";
+		String city = ""; //
 		String county = "";
-		String zip = "";
-		String plusFour = "";
-		String northSouth = "";
-		String type = "";
-		String depth = "";
-		String cost = "";
-		String avgCost = "";
-		String avgDepth = "";
-		String realtor = "";
-		String realtorAddress = "";
-		String phoneNumber = "";
-		String email = "";
+		String zip = ""; // 5 digits no spaces
+		String plusFour = ""; // after 5 digits, sometimes a -, 00+2 or 0+3 or 4 digit number
+		String northSouth = ""; // if certain zips, north, others, south
+		String type = ""; // Pile, Slabjack, Crack Repair, Basement Tech, Multicoat, Other
+		String depth = ""; // for Pile
+		String cost = ""; // for property
+		String avgCost = ""; // for job type in area
+		String avgDepth = ""; // for pile in area
+		String realtor = ""; // google search for property manager
+		String realtorAddress = ""; // address for property manager locally
+		String phoneNumber = ""; // google search for phone number for property
+		String email = ""; // google search for phone number for property
 
-		System.out.println(
-				address + ", " + city + ", " + state + ", " + county + ", " + zip + "-" + plusFour + ", " + northSouth);
-		System.out
-				.println(type + ": " + depth + "ft (" + avgDepth + "ft avg.) $" + cost + " (*" + avgCost + " avg cost");
-		System.out.println(realtor + " " + realtorAddress + " " + phoneNumber + " " + email);
+		System.out.println("Address: " + address + ", " + city + ", " + state + ", " + county + ", " + zip + "-"
+				+ plusFour + ", " + northSouth);
+		System.out.println("Depths and cost: " + type + ": " + depth + "ft (" + avgDepth + "ft avg.) $" + cost + " (*"
+				+ avgCost + " avg cost)");
+		System.out.println("Realtor: " + realtor + " " + realtorAddress + " " + phoneNumber + " " + email);
 	}
 }
