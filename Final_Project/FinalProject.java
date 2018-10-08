@@ -130,7 +130,8 @@ class finalProject {
 	}
 
 	public static void dataImport() {
-		//download file  https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
+		// download file
+		// https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
 		String fileName = "/Users/Administrator/Git/Intro_to_Programming/Final_Project/UncleanedData.csv";
 		File file = new File(fileName);
 		List<List<String>> lines = new ArrayList<>();
