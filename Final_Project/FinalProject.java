@@ -4,7 +4,7 @@ Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: Final_Project
-Date: .  2018
+Date: Oct. 8,  2018
 Summary: Think of a project that uses multiple items you have learned 
          from this class (using arrays is required). Please create a 
          write-up proposal for your project following the format stated below.
@@ -91,7 +91,14 @@ class finalProject {
 
 		System.out.println("-------------------------------------");
 		Scanner reader = new Scanner(System.in);
-		int inputCleaned = Integer.parseInt(reader.nextLine());
+		int inputCleaned = 0;
+
+		try {
+			inputCleaned = Integer.parseInt(reader.nextLine());
+		} catch (NumberFormatException e) {
+			System.out.println("Enter a number: ");
+			inputCleaned = Integer.parseInt(reader.nextLine());
+		}
 
 		switch (inputCleaned) {
 		case 0:
@@ -105,23 +112,24 @@ class finalProject {
 			menu();
 			break;
 		case 3:
-			gaps(); //combine duplicates, okay overwrites, use given info to find unknowns
+			gaps(); // combine duplicates, okay overwrites, use given info to find unknowns
 			menu();
 			break;
 		case 4:
-			query(); //lookup info meeting given criteria, or options for next best (eg. unknown address boots to nearby or zip, city, n/s, state...)
+			query(); // lookup info meeting given criteria, or options for next best (eg. unknown
+						// address boots to nearby or zip, city, n/s, state...)
 			menu();
 			break;
 		case 5:
-			estimates(); //input address, input type, input cost, input piles
+			estimates(); // input address, input type, input cost, input piles
 			menu();
 			break;
 		case 6:
-			addData(); //via estimates, append to file
+			addData(); // via estimates, append to file
 			menu();
 			break;
 		case 7:
-			upload(); //upload to google drive or edit google doc
+			upload(); // upload to google drive or edit google doc
 			menu();
 			break;
 		default:
@@ -132,6 +140,7 @@ class finalProject {
 	public static void dataImport() {
 		// download file
 		// https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
+		// https://github.com/EPCarter/Intro_to_Programming/blob/master/Final_Project/UncleanedData.csv
 		String fileName = "/Users/Administrator/Git/Intro_to_Programming/Final_Project/UncleanedData.csv";
 		File file = new File(fileName);
 		List<List<String>> lines = new ArrayList<>();
@@ -147,14 +156,16 @@ class finalProject {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		arrayList(lines);
-		dataCleanup(lines);
+		arrayList(lines); // prints array data
+		dataCleanup(lines); // makes new array to hold cleaned data, condenses duplicates, pulls known
+							// items, puts rest in other
 	}
 
 	public static void dataCleanup(List<List<String>> lines) {
 		// find things and put copy in right place
-		// query into array 0, others into 1+
+		// query goes into array 0, others into 1+
 		// Read line (all columns)
+		// Geo Lat/Long
 		// find street address
 		// find city
 		// find state
@@ -165,16 +176,15 @@ class finalProject {
 		// find what
 		// find how deep
 		// find total cost
-		// find realtor
-		// find phone number
+		// find realtor ?
+		// find realtor phone number?
 		// find everything else
-		
-		//save as cleanedData
+
+		// save as cleanedData
 	}
 
 	public static void gaps() {
-		// google search return string
-		// return results that match (or votes for return match)
+		System.out.println("Google search for missing data with given data");
 	}
 
 	public static List<String> inputCleanup(String input) {
@@ -197,6 +207,7 @@ class finalProject {
 	}
 
 	public static void lookup(String input) {
+		System.out.println("Depth Avg for <location> " + " " + "Cost Avg for <location>" + "");
 		// clean input
 		// compare
 		// averages for area
@@ -207,7 +218,7 @@ class finalProject {
 		for (List<String> line : lines) {
 			int columnNo = 1;
 			for (String value : line) {
-				System.out.println("Line " + lineNo + " Column " + columnNo + ": " + value);
+				System.out.println(lineNo + " [" + columnNo + "] - " + value);
 				columnNo++;
 			}
 			lineNo++;
@@ -226,6 +237,7 @@ class finalProject {
 	}
 
 	public static void estimates() {
+		System.out.println("Add in data for an estimate and add to database");
 		// data = ;
 		// addData(data);
 	}
