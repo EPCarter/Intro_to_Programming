@@ -185,6 +185,21 @@ class finalProject {
 
 	public static void gaps() {
 		System.out.println("Google search for missing data with given data");
+		// https://m.usps.com/m/ZipLookupAction?search=address
+		// https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=AIzaSyAAesQiWGMRRGpXFmFQDiLF2ZU8rb_uT80
+		// https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=YOUR_API_KEY
+
+		/*
+		 * address_components[] location global_code place_id type[] url
+		 * query_place_id
+		 * https://www.google.com/maps/search/?api=1&query=centurylink+field
+		 * https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393&query_place_id=ChIJKxjxuaNqkFQR3CK6O1HNNqY
+		 * https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393
+		 * https://www.google.com/maps/@?api=1&map_action=map
+		 * basemap=satellite
+		 * center=lat, long
+		 * https://www.google.com/maps/@?api=1&map_action=map&center=-33.712206,150.311941&zoom=12&basemap=terrain
+		 */
 	}
 
 	public static List<String> inputCleanup(String input) {
