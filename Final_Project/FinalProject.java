@@ -3,288 +3,99 @@
 Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
-Assignment: Final_Project
-Date: Oct. 8,  2018
-Summary: Think of a project that uses multiple items you have learned 
-         from this class (using arrays is required). Please create a 
-         write-up proposal for your project following the format stated below.
-
-              1. Introduction: Overview of your project (1 paragraph)
-              2. Target Population: Who are you directing this software and 
-                  what are you doing to make it appeal to them? (2 paragraphs)
-              3. Purpose to the consumer: what makes your program unique, 
-                  what makes it a better option than other software or is 
-                  there a lack of software in this field? Is it helpful, how so? 
-                  (3 paragraphs)
-              4. Constraints: List possible bugs and what factors you will 
-                  be considering beforehand to avoid those bugs. (Numbered list 
-                  and 2 paragraphs)
-              5. Conclusion: Why you are moving forward with this project. 
-                  Overview of project strategy. (1 - 2 paragraphs)
-                  
-           GitHub is a great way to market your product and show off your code.  
-           The formatting and information of your README page is especially helpful 
-           to give your target audience the best impression of your code.  Here is
-           a template (Links to an external site.)Links to an external site. for a 
-           GitHub README page along with general guidelines (Links to an external 
-           site.)Links to an external site. to follow and reasons (Links to an external 
-           site.)Links to an external site.why someone wouldn't use your code.  Read 
-           through these and use Mr. Perkins's Angular.io repository to help shape 
-           your own README page.
-           
-           Please add all files needed to run your code, a JavaDoc for your code, 
-           and a README for your project using the examples above onto your GitHub 
-           and submit the link here.
+Assignment: Final Project
+Date: Oct. 10, 2018
+Summary: Display info about points near a given address.
 */
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
 @SuppressWarnings("resource")
-
-class finalProject {
+public class FinalProject {
 	public static void main(String[] args) {
-		menu();
+		String input = inputer();
+		List<List<String>> cleanedData = importer(input);
+		printer(cleanedData);
 	}
 
-	public static void menu() { // rewrite to take menu options for submenu
-		System.out.println("-------------------------------------");
-		System.out.println("What would you like to do?");
-		System.out.println();
-		int menuItems = 7;
-		int a = 0;
-		String b = "";
-		for (int j = 0; j < menuItems; j++) {
-			switch (j) {
-			case 0:
-				b = "Exit";
-				break;
-			case 1:
-				b = "Main Menu";
-				break;
-			case 2:
-				b = "Import Data";
-				break;
-			case 3:
-				b = "Fill in Data Gaps";
-				break;
-			case 4:
-				b = "Location Lookup";
-				break;
-			case 5:
-				b = "Estimates";
-				break;
-			case 6:
-				b = "Add Data";
-				break;
-			case 7:
-				b = "Upload";
-				break;
-			default:
-				b = "Menu";
-				break;
-			}
-			System.out.println(a + ": " + b);
-			a++;
-		}
-
-		System.out.println("-------------------------------------");
+	public static String inputer() {// Takes address input
+		System.out.println("Address: ");
 		Scanner reader = new Scanner(System.in);
-		int inputCleaned = 0;
-
-		try {
-			inputCleaned = Integer.parseInt(reader.nextLine());
-		} catch (NumberFormatException e) {
-			System.out.println("Enter a number: ");
-			inputCleaned = Integer.parseInt(reader.nextLine());
-		}
-
-		switch (inputCleaned) {
-		case 0:
-			System.exit(0);
-			break;
-		case 1:
-			menu();
-			break;
-		case 2:
-			dataImport();
-			menu();
-			break;
-		case 3:
-			gaps(); // combine duplicates, okay overwrites, use given info to find unknowns
-			menu();
-			break;
-		case 4:
-			query(); // lookup info meeting given criteria, or options for next best (eg. unknown
-						// address boots to nearby or zip, city, n/s, state...)
-			menu();
-			break;
-		case 5:
-			estimates(); // input address, input type, input cost, input piles
-			menu();
-			break;
-		case 6:
-			addData(); // via estimates, append to file
-			menu();
-			break;
-		case 7:
-			upload(); // upload to google drive or edit google doc
-			menu();
-			break;
-		default:
-			break;
-		}
+		String input = reader.nextLine();
+		return input;
 	}
 
-	public static void dataImport() {
-		// download file
-		// https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
-		// https://github.com/EPCarter/Intro_to_Programming/blob/master/Final_Project/UncleanedData.csv
-		String fileName = "/Users/Administrator/Git/Intro_to_Programming/Final_Project/UncleanedData.csv";
+	public static List<List<String>> importer(String input) { // imports csv file to raw array list
+		String fileName = "/Users/Administrator/Git/Intro_to_Programming/Final_Project/Database.csv";
 		File file = new File(fileName);
-		List<List<String>> lines = new ArrayList<>();
+		List<List<String>> rawData = new ArrayList<>();
+		List<List<String>> cleanedData = new ArrayList<>();
+
+		if (input != "") {
+			String line = input;
+			String[] values = line.split("   "); // .split(",");
+			rawData.add(Arrays.asList(values));
+		}
+
 		Scanner inputStream;
 		try {
 			inputStream = new Scanner(file);
 			while (inputStream.hasNext()) {
 				String line = inputStream.nextLine();
-				String[] values = line.split(",");
-				lines.add(Arrays.asList(values));
+				String[] values = line.split("   "); // .split(",");
+				rawData.add(Arrays.asList(values));
 			}
 			inputStream.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		arrayList(lines); // prints array data
-		dataCleanup(lines); // makes new array to hold cleaned data, condenses duplicates, pulls known
-							// items, puts rest in other
+		cleanedData = listCleaner(rawData);
+		return cleanedData;
 	}
 
-	public static void dataCleanup(List<List<String>> lines) {
-		// find things and put copy in right place
-		// query goes into array 0, others into 1+
-		// Read line (all columns)
-		// Geo Lat/Long
-		// find street address
-		// find city
-		// find state
-		// find zip
-		// find zip+4
-		// find county
-		// find north/south
-		// find what
-		// find how deep
-		// find total cost
-		// find realtor ?
-		// find realtor phone number?
-		// find everything else
-
-		// save as cleanedData
-	}
-
-	public static void gaps() {
-		System.out.println("Google search for missing data with given data");
-		// https://m.usps.com/m/ZipLookupAction?search=address
-		// https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=AIzaSyAAesQiWGMRRGpXFmFQDiLF2ZU8rb_uT80
-		// https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=YOUR_API_KEY
-
-		/*
-		 * address_components[] location global_code place_id type[] url
-		 * query_place_id
-		 * https://www.google.com/maps/search/?api=1&query=centurylink+field
-		 * https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393&query_place_id=ChIJKxjxuaNqkFQR3CK6O1HNNqY
-		 * https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393
-		 * https://www.google.com/maps/@?api=1&map_action=map
-		 * basemap=satellite
-		 * center=lat, long
-		 * https://www.google.com/maps/@?api=1&map_action=map&center=-33.712206,150.311941&zoom=12&basemap=terrain
-		 */
-	}
-
-	public static List<String> inputCleanup(String input) {
-		// format given string to array[0] boxes
-		List<String> inputData = new ArrayList<>();
-		// input to array
-		return inputData;
-	}
-
-	public static void query() {
-		// check arary[0] against all other boxes
-		// return matches
-		// math on matches
-		Scanner reader = new Scanner(System.in);
-		System.out.print("Location lookup: ");
-		String input = reader.nextLine();
-		inputCleanup(input);
-		lookup(input);
-		printOut(input);
-	}
-
-	public static void lookup(String input) {
-		System.out.println("Depth Avg for <location> " + " " + "Cost Avg for <location>" + "");
-		// clean input
-		// compare
-		// averages for area
-	}
-
-	public static void arrayList(List<List<String>> lines) {
+	public static List<List<String>> listCleaner(List<List<String>> rawData) {
+		List<List<String>> cleanedData = new ArrayList<>();
 		int lineNo = 1;
-		for (List<String> line : lines) {
+		for (List<String> line : rawData) {
 			int columnNo = 1;
 			for (String value : line) {
-				System.out.println(lineNo + " [" + columnNo + "] - " + value);
+				String line2 = value;
+				line2 = stringCleaner(line2, rawData);
+				String[] values = line2.split("   "); // .split(",");
+				cleanedData.add(Arrays.asList(values));
 				columnNo++;
 			}
 			lineNo++;
 		}
+		return cleanedData;
 	}
 
-	public static void addData() {
-		Scanner reader = new Scanner(System.in);
-		System.out.print("Data to add: ");
-		String input = reader.nextLine();
-		inputCleanup(input);
-		List<String> inputData = new ArrayList<>();
-		// dataCleanup(inputData);
-		// append data to
-		// "/Users/Administrator/Git/Intro_to_Programming/Final_Project/UncleanedData.csv";
+	public static String stringCleaner(String input, List<List<String>> rawData) { // finds data in given string
+		String cleanedString = input;
+		// compare to array spot
+		// for (int i = 0; i < rawData.size(); i++) {
+		// if(rawData[i].matches(input)) { //if input matches array spot i
+		System.out.println("add to array at spot i");
+
+		// }
+		// cleanedString = cleanedString.replaceAll(cleanPattern, "");
+		return cleanedString;
+
 	}
 
-	public static void estimates() {
-		System.out.println("Add in data for an estimate and add to database");
-		// data = ;
-		// addData(data);
+	public static void puller() { // gets info from google maps api
 	}
 
-	public static void upload() {
-		System.out.println("Uploads .cvs to Google Drive.");
-		// https://docs.google.com/spreadsheets/d/1vKJRWIkHcJ-InBp9SUJOUAAQYrGQhXxxlQG3IeLvIPg/edit?usp=sharing
-	}
-
-	public static void printOut(String input) {
-		String address = ""; // 0-5 numbers, space, then word, space, then maybe word (w/ | w/o punctuation),
-								// space (eg. 123 Fake St.)
-		String state = "";
-		String city = ""; //
-		String county = "";
-		String zip = ""; // 5 digits no spaces
-		String plusFour = ""; // after 5 digits, sometimes a -, 00+2 or 0+3 or 4 digit number
-		String northSouth = ""; // if certain zips, north, others, south
-		String type = ""; // Pile, Slabjack, Crack Repair, Basement Tech, Multicoat, Other
-		String depth = ""; // for Pile
-		String cost = ""; // for property
-		String avgCost = ""; // for job type in area
-		String avgDepth = ""; // for pile in area
-		String realtor = ""; // google search for property manager
-		String realtorAddress = ""; // address for property manager locally
-		String phoneNumber = ""; // google search for phone number for property
-		String email = ""; // google search for phone number for property
-
-		System.out.println("Address: " + address + ", " + city + ", " + state + ", " + county + ", " + zip + "-"
-				+ plusFour + ", " + northSouth);
-		System.out.println("Depths and cost: " + type + ": " + depth + "ft (" + avgDepth + "ft avg.) $" + cost + " (*"
-				+ avgCost + " avg cost)");
-		System.out.println("Realtor: " + realtor + " " + realtorAddress + " " + phoneNumber + " " + email);
+	public static void printer(List<List<String>> cleanedData) { // prints array
+		int lineNo = 1;
+		for (List<String> line : cleanedData) {
+			int columnNo = 1;
+			for (String value : line) {
+				System.out.println("[" + lineNo + "]" + "[" + columnNo + "]-" + value);
+				columnNo++;
+			}
+			lineNo++;
+		}
 	}
 }
