@@ -1,8 +1,8 @@
 Street Address,City,State,Zip,Latitude,Longitude,County,Zone,Type,Depth,Cost,Last Name,Other,Original String,Distance
-"""\\d{1,5}*\\s\\w.*\\s(\\b\\w*\\b\\s){1,2}\\w*""","""\\w""","""(UT | NV)""","""\\d{5}""","""\\d""","""\\d""","""\\w""","""\\w""","""\\w""","""\\d\\s?(ft)?\\.?""","""$?\\d{3,6}""","""\\w""",""".""",""".""","""\\d"""
+"\\d{5}\\s\\w.*\\s(\\b\\w*\\b\\s){1}\\w*","\\w","(UT | NV)","\\d{5}","\\d","\\d","\\w","\\w","\\w","\\d\\s?(ft)?\\.?","$?\\d{3}","\\w",".",".","\\d"
 ,,,,,,,,,,,,,,
-1567 North 310 West,"Logan, UT",UT,,,,,,Slab Jack,,,,,,
-2326 S. AUGUSTA,"ST. GEORGE, UT",UT,,,,,,Ram Jack,,,,,,
+1567 North 310 West,"Logan, UT",UT,84341,41.7606232,-111.8421865,,,Slab Jack,,,,,,
+2326 S. AUGUSTA,"ST. GEORGE, UT",UT,84790,37.0688095,-113.5542962,,,Ram Jack,,,,,,
 2983 TAYLOR AVE. #5,OGDEN,UT,84403,,,,,Crack Repair,,,,,,
 100 S. MAIN,HURRICANE,UT,,,,,,Slab Jack,,,,,,
 1000 DOROTHEA WAY,SALT LAKE CITY,UT,84116,,,,,Slab Jack,,,,,,
@@ -18,7 +18,7 @@ Street Address,City,State,Zip,Latitude,Longitude,County,Zone,Type,Depth,Cost,Las
 10074 S. BELL CANYON CIRCLE,SANDY,UT,,,,,,Crack Repair,,,,,,
 1009 W. 3000 N.,PLEASANT VIEW,UT,,,,,,Basement Tech.,,,,,,
 101 Bamberger Way,Centerville,UT,,,,,,Crack Repair,,,,,,
-1012 E. 3100 N.,NORTH OGDEN,UT,84414-1741,,,,,Crack Repair,,,,,,
+1012 E. 3100 N.,NORTH OGDEN,UT,84414,,,,,Crack Repair,,,,,,
 1012 W. 3000 N.,PLEASANTVIEW,UT,84414,,,,,Crack Repair,,,,,,
 1013 RIVER BEND,OGDEN,UT,,,,,,Slab Jack,,,,,,
 1013 Vitt Drive,Ogden,UT,84404,,,,,Crack Repair,,,,,,
