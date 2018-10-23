@@ -7,19 +7,30 @@ Assignment: Final Project
 Date: Oct. 17, 2018
 Summary: Display info about points near a given address.
 */
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @SuppressWarnings("resource")
 public class FinalProject {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		List<List<String>> inputList = new ArrayList<>();
 		inputList = inputer(); // gets address to query
 		List<List<String>> cleanedData = importer(); // adds it to first line of data, imports csv
 		String[] myList = finder(cleanedData, inputList); // searches database for input
 		myList = multiCheck(myList, inputList);
 		printer(myList); // prints found matches
+		String output = googleMaps(myList);
+		distance();
 	}
 
 	public static List<List<String>> inputer() {// Takes an address input
@@ -99,7 +110,7 @@ public class FinalProject {
 		String lat = "()"; // always neg 3 digit
 		String type = "()"; // word
 		String distance = "()";
-		
+
 		switch (k) { // iterate k for each data type to find
 		case 1:
 			regex = address;
@@ -122,6 +133,9 @@ public class FinalProject {
 		case 7:
 			regex = type;
 			break;
+		case 8:
+			regex = distance;
+			break;
 		default:
 			regex = "";
 			break;
@@ -133,17 +147,75 @@ public class FinalProject {
 		for (int i = 0; i < myList.length; i++) {
 			try {
 				String output = cleaner(myList[i]);
-				System.out.println(output);
+				System.out.println(i + ": " + output);
 			} catch (IndexOutOfBoundsException e) { // todo figure out what's up
 			}
 		}
 	}
 
 	public static String cleaner(String toClean) { // removes most punctuation
-		String cleanedString = toClean.replaceAll("\\,|\\*|\\(|\\)|\\[|\\]|\\:|\\'|\\^|\\?|\"|\\.", " ");
+		String cleanedString = toClean.replaceAll("\\,|\\*|\\(|\\)|\\[|\\]|\\:|\\'|\\^|\\?|\"", " "); // add \\.
 		cleanedString = cleanedString.replaceAll("\\s{2,}", " "); // removes extra spaces
 		cleanedString = cleanedString.replaceAll("\\s{2,}", " ");
 		cleanedString = cleanedString.toUpperCase();
 		return cleanedString;
+	}
+
+	public static String googleMaps(String[] myList) throws IOException {
+		System.out.println("Which entry is correct: ");
+		Scanner reader = new Scanner(System.in);
+		int entry = reader.nextInt();
+		String entryString = cleaner(myList[entry]);
+		entryString = entryString.replaceAll("\\s", "%20");
+		String urlString = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + entryString
+				+ "&inputtype=textquery&fields=place_id,formatted_address,geometry&key=AIzaSyAAesQiWGMRRGpXFmFQDiLF2ZU8rb_uT80";
+
+		URL url = new URL(urlString);
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestMethod("GET");
+
+		int status = con.getResponseCode();
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		String inputLine;
+		StringBuffer content = new StringBuffer();
+		while ((inputLine = in.readLine()) != null) {
+			content.append(inputLine);
+		}
+		in.close();
+		con.disconnect();
+		String contentString = content.toString();
+		String output = cleaner(contentString);
+		cleaner(contentString);
+
+		System.out.println(output);
+
+		String addressRegex = "FORMATTED_ADDRESS <> GEOMETRY";
+		String latRegex = "LOCATION { LAT ";
+		String lngRegex = " LNG ";
+		String placeRegex = "PLACE_ID ";
+
+		String formatted_address = "";
+		String lat = "";
+		String lng = "";
+		String place_id = "";
+
+		Pattern searchPattern = Pattern.compile(placeRegex);
+		Matcher searchMatcher = searchPattern.matcher(contentString);
+
+		if (searchMatcher.find()) {
+			place_id = searchMatcher.group(entry);
+			System.out.println(place_id);
+		}
+		return output;
+	}
+
+	public static void distance() {
+		double xOne = 41.7606232;
+		double xTwo = 41.210068;
+		double yOne = -111.8421865;
+		double yTwo = -111.940491;
+		double distance = 0;
+		distance = Math.sqrt(((xTwo - xOne) * (xTwo - xOne)) + ((yTwo - yOne) * (yTwo - yOne)));
+		System.out.println(38.38 / distance);
 	}
 }
