@@ -34,3 +34,7 @@ Download the FinalProject.java and Database.csv files and run the .java file.
 ## Contributors
 
 Erik Carter, Carter.Eri7200@stu.stech.edu
+
+## License
+
+MIT/X11
