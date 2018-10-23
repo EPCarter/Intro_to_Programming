@@ -4,12 +4,19 @@ This program takes in a database of addresses and a user input and returns all o
 
 ## Code Example
 Database.csv is input
+
 User search criteria input
+
 Input cleaned up and stored
+
 Matching input listings printed
+
 User choice input
+
 Missing information for choice queried from Google Maps API
+
 Returned data (such as latitude and longitude) printed
+
 Distance between two coordinates returned
 
 ## Motivation
