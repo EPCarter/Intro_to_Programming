@@ -1,23 +1,27 @@
-## Synopsis
+## Repository Overview
+
+This is a repository of Java programs curated to showcase various key Java principles touched on in *Introduction to Java Programming: Comprehensive Version, 10th Ed by Y. Daniel Liang*
+
+## Final Project Synopsis
 
 This program takes in a database of addresses and a user input and returns all of the criteria that matches.
 
 ## Code Example
-Database.csv is input
+   Database.csv is input
 
-User search criteria input
+   User search criteria input
 
-Input cleaned up and stored
+   Input cleaned up and stored
 
-Matching input listings printed
+   Matching input listings printed
 
-User choice input
+   User choice input
 
-Missing information for choice queried from Google Maps API
+   Missing information for choice queried from Google Maps API
 
-Returned data (such as latitude and longitude) printed
+   Returned data (such as latitude and longitude) printed
 
-Distance between two coordinates returned
+   Distance between two coordinates returned
 
 ## Motivation
 
@@ -26,10 +30,6 @@ This program fills a niche left by other programs in allowing a query about poin
 ## Installation
 
 Download the FinalProject.java and Database.csv files and run the .java file.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
 
 ## Contributors
 
