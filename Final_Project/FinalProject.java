@@ -4,8 +4,8 @@ Author: Erik Carter
 Email: Carter.Eri7200@stu.stech.edu
 Course: CSCI 1105 - Introduction to Programming
 Assignment: Final Project
-Date: Oct. 17, 2018
-Summary: Display info about points near a given address.
+Date: Oct. 23, 2018
+Summary: Displays info about a given point.
 */
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,15 +13,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@SuppressWarnings("resource")
 public class FinalProject {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException {
 		List<List<String>> inputList = new ArrayList<>();
 		inputList = inputer(); // gets address to query
@@ -33,6 +31,7 @@ public class FinalProject {
 		distance();
 	}
 
+	@SuppressWarnings("resource")
 	public static List<List<String>> inputer() {// Takes an address input
 		System.out.println("Lookup: ");
 		Scanner reader = new Scanner(System.in);
@@ -161,6 +160,7 @@ public class FinalProject {
 		return cleanedString;
 	}
 
+	@SuppressWarnings({ "resource", "unused" })
 	public static String googleMaps(String[] myList) throws IOException {
 		System.out.println("Which entry is correct: ");
 		Scanner reader = new Scanner(System.in);
@@ -174,7 +174,7 @@ public class FinalProject {
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("GET");
 
-		int status = con.getResponseCode();
+		// int status = con.getResponseCode();
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
 		StringBuffer content = new StringBuffer();
@@ -186,26 +186,23 @@ public class FinalProject {
 		String contentString = content.toString();
 		String output = cleaner(contentString);
 		cleaner(contentString);
-
-		System.out.println(output);
-
 		String addressRegex = "FORMATTED_ADDRESS <> GEOMETRY";
 		String latRegex = "LOCATION { LAT ";
 		String lngRegex = " LNG ";
 		String placeRegex = "PLACE_ID ";
-
 		String formatted_address = "";
 		String lat = "";
 		String lng = "";
 		String place_id = "";
 
-		Pattern searchPattern = Pattern.compile(placeRegex);
+		Pattern searchPattern = Pattern.compile(placeRegex); // iterate and store
 		Matcher searchMatcher = searchPattern.matcher(contentString);
 
 		if (searchMatcher.find()) {
 			place_id = searchMatcher.group(entry);
 			System.out.println(place_id);
 		}
+		System.out.println(output);
 		return output;
 	}
 
@@ -219,3 +216,13 @@ public class FinalProject {
 		System.out.println(38.38 / distance);
 	}
 }
+
+/*
+ * To Do:
+ * 
+ *  regex pieces out of googleMaps return
+ *  check google response accuracy
+ *  integrate other info (type, cost)
+ *  calculate distance between coordinates
+ *  
+ */
